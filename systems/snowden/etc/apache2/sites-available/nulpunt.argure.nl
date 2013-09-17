@@ -12,7 +12,7 @@
 		DocumentRoot /srv/nulpunt.argure.nl
 
 		LogLevel info ssl:warn
-		ErrorLog ${APACHE_LOG_DIR}/example.tld/error.log
+		ErrorLog ${APACHE_LOG_DIR}/nulpunt.argure.nl/error.log
 
 		SSLEngine on
 		SSLCertificateFile /etc/ssl/certs/nulpunt.argure.nl.pem
