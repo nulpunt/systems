@@ -95,3 +95,11 @@ Site 000-default disabled.
 
 root@snowden:~# a2ensite nulpunt.argure.nl
 Enabling site nulpunt.argure.nl.
+
+root@snowden:~# aptitude install zsh
+The following NEW packages will be installed:
+  zsh 
+
+root@snowden:~# chsh -s /bin/zsh
+
+snowden# export PS1="%n@%m:%~# " 
