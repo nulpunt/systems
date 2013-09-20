@@ -1,0 +1,105 @@
+snowden
+=======
+
+2013-09-17 argure
+-----------------
+
+root@snowden:~# aptitude update
+Current status: 1 update [+1], 4497 new [+4497].
+
+root@snowden:~# aptitude full-upgrade
+The following packages will be upgraded: 
+  tzdata 
+
+root@snowden:~# aptitude -t testing install apache2
+The following NEW packages will be installed:
+  apache2 apache2-bin{a} apache2-data{a} libapr1{a} libaprutil1{a} 
+  libaprutil1-dbd-sqlite3{a} libaprutil1-ldap{a} liblua5.1-0{a} ssl-cert{a} 
+The following packages will be upgraded:
+  libc6 locales 
+
+root@snowden:~# aptitude -t testing install libc6-dev
+The following NEW packages will be installed:
+  binutils{a} cpp{a} cpp-4.7{a} gcc{a} gcc-4.7{a} gcc-4.8-base{a} 
+  libc-dev-bin{a} libc6-dev libcloog-ppl1{a} libgcc-4.7-dev{a} libgmp10{a} 
+  libgmpxx4ldbl{a} libgomp1{a} libitm1{a} libmpc3{a} libmpfr4{a} 
+  libppl-c4{a} libppl12{a} libquadmath0{a} linux-libc-dev{a} 
+  manpages-dev{a} 
+The following packages will be upgraded:
+  gcc-4.7-base libgcc1 libstdc++6 
+
+root@snowden:~# aptitude -t testing install g++-4.7
+The following NEW packages will be installed:
+  g++-4.7 libstdc++6-4.7-dev{a} 
+
+root@snowden:~# aptitude install dpkg-dev
+The following NEW packages will be installed:
+  build-essential{a} dpkg-dev fakeroot{a} g++{a} libalgorithm-diff-perl{a} 
+  libalgorithm-diff-xs-perl{a} libalgorithm-merge-perl{a} libdpkg-perl{a} 
+  libfile-fcntllock-perl{a} libtimedate-perl{a} make{a} 
+
+root@snowden:/usr/local/src/apache2-2.4.6# aptitude -t testing install \
+> libapr1-dev libaprutil1-dev liblua5.1-0-dev libncurses5 libncursesw5
+The following NEW packages will be installed:
+  autotools-dev{a} comerr-dev{a} krb5-multidev{a} libapr1-dev 
+  libaprutil1-dev libexpat1-dev{a} libffi6{a} libglib2.0-0{a} 
+  libglib2.0-data{a} libgssrpc4{a} libkadm5clnt-mit8{a} libkadm5srv-mit8{a} 
+  libkdb5-7{a} libldap2-dev{a} libltdl-dev{a} libltdl7{a} liblua5.1-0-dev 
+  libmysqlclient-dev{a} libmysqlclient18{a} libpcre3-dev{a} libpcrecpp0{a} 
+  libpq-dev{a} libpq5{a} libreadline-dev{a} libreadline6-dev{a} 
+  libsqlite3-dev{a} libssl-dev{a} libssl-doc{a} libtinfo-dev{a} libtool{a} 
+  mysql-common{a} pkg-config{a} shared-mime-info{a} uuid-dev{a} 
+  zlib1g-dev{a} 
+The following packages will be upgraded:
+  libcomerr2 libexpat1 libgcrypt11 libgssapi-krb5-2 libk5crypto3 libkrb5-3 
+  libkrb5support0 libldap-2.4-2 libncurses5 libncursesw5 libpcre3 
+  libsqlite3-0 libssl1.0.0 libtinfo5 libuuid1 zlib1g 
+The following packages are RECOMMENDED but will NOT be installed:
+  uuid-runtime 
+
+root@snowden:/usr/local/src/apache2-2.4.6# aptitude install debhelper \
+> libcap-dev libxml2-dev
+The following NEW packages will be installed:
+  autopoint{a} debhelper gettext{a} git{a} git-man{a} html2text{a} 
+  intltool-debian{a} libcap-dev libcroco3{a} libcurl3-gnutls{a} 
+  liberror-perl{a} libgettextpo0{a} libmail-sendmail-perl{a} librtmp0{a} 
+  libssh2-1{a} libsys-hostname-long-perl{a} libunistring0{a} libxml2-dev 
+  po-debconf{a} rsync{a}
+
+root@snowden:/usr/local/src# dpkg -i apache2_2.4.6-3_amd64.deb
+
+root@snowden:/usr/local/src# dpkg -i apache2-bin_2.4.6-3_amd64.deb
+
+root@snowden:/usr/local/src# dpkg -i apache2-data_2.4.6-3_all.deb
+
+root@snowden:~# a2enmod ssl
+Considering dependency setenvif for ssl:
+Module setenvif already enabled
+Considering dependency mime for ssl:
+Module mime already enabled
+Considering dependency socache_shmcb for ssl:
+Enabling module socache_shmcb.
+Enabling module ssl.
+
+root@snowden:~# a2enmod headers
+Enabling module headers.
+
+root@snowden:~# a2enconf etag.conf
+Enabling conf etag.
+
+root@snowden:~# a2enconf ssl-custom.conf
+Enabling conf ssl-custom.
+
+root@snowden:~# a2dissite 000-default
+Site 000-default disabled.
+
+root@snowden:~# a2ensite nulpunt.argure.nl
+Enabling site nulpunt.argure.nl.
+
+root@snowden:~# aptitude install zsh
+The following NEW packages will be installed:
+  zsh 
+
+root@snowden:~# chsh -s /bin/zsh
+
+snowden# export PS1="%n@%m:%~# " 
