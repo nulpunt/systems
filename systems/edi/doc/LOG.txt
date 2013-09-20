@@ -288,3 +288,12 @@ Reloading web server: apache2.
 
 root@edi:/etc/apache2/sites-available# service apache2 reload      
 Reloading web server: apache2.
+
+root@edi:~# a2enmod proxy_ajp
+Considering dependency proxy for proxy_ajp:
+Module proxy already enabled
+Enabling module proxy_ajp.
+To activate the new configuration, you need to run:
+  service apache2 restart
+root@edi:~# service apache2 restart
+Restarting web server: apache2.
