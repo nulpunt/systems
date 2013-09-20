@@ -103,3 +103,14 @@ The following NEW packages will be installed:
 root@snowden:~# chsh -s /bin/zsh
 
 snowden# export PS1="%n@%m:%~# " 
+
+2013-09-20 21:50 geertjohan
+-----------------
+
+root@edi:~# a2enmod proxy
+Enabling module proxy.
+To activate the new configuration, you need to run:
+  service apache2 restart
+
+root@edi:~# service apache2 restart
+Restarting web server: apache2.
