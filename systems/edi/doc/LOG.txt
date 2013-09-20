@@ -281,5 +281,10 @@ Restarting web server: apache2.
 
 root@edi:/etc/apache2/sites-available# a2ensite jenkins.nulpunt.nu
 
-root@edi:~# service apache2 restart
-Restarting web server: apache2.
+root@edi:/etc/apache2/sites-available# service apache2 reload      
+Reloading web server: apache2.
+
+# edited and uploaded /etc/apache2/sites-available/jenkins.nulpunt.nu
+
+root@edi:/etc/apache2/sites-available# service apache2 reload      
+Reloading web server: apache2.

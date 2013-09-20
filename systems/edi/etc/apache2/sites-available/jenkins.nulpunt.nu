@@ -1,12 +1,12 @@
 <IfModule mod_ssl.c>
-	<VirtualHost _default_:80>
+	<VirtualHost *:80>
 		ServerName jenkins.nulpunt.nu
 		#TODO: Update to jenkins@nulpunt.nu when mail forwarder is running
 		ServerAdmin geertjohan.riemer@gmail.com
 		Redirect permanent / https://jenkins.nulpunt.nu
 	</VirtualHost>
 
-	<VirtualHost _default_:443>
+	<VirtualHost *:443>
 		ServerName jenkins.nulpunt.nu
 		#TODO: Update to jenkins@nulpunt.nu when mail forwarder is running
 		ServerAdmin geertjohan.riemer@gmail.com
