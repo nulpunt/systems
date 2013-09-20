@@ -302,7 +302,7 @@ root@edi:~# nano /etc/default/jenkins
 root@edi:~# service jenkins restart
 Restarting Jenkins Continuous Integration Server: jenkins.
 
-2013-09-20 24:07 geertjohan
+2013-09-21 00:07 geertjohan
 -----------------
 
 root@edi:~# aptitude -t testing install openjdk-7-jre
@@ -1682,3 +1682,10 @@ done.
 
 root@edi:~# service jenkins restart
 Restarting Jenkins Continuous Integration Server: jenkins.
+
+2013-09-21 00:22 geertjohan
+-----------------
+
+root@edi:~# nano /etc/apache2/sites-available/jenkins.nulpunt.nu.conf
+root@edi:~# service apache2 reload
+Reloading web server: apache2.

@@ -11,8 +11,8 @@
 		#TODO: Update to jenkins@nulpunt.nu when mail forwarder is running
 		ServerAdmin geertjohan.riemer@gmail.com
 
-		ProxyPass / ajp://127.0.0.1:8102/jenkins/
-		ProxyPassReverse / ajp://127.0.0.1:8102/jenkins/
+		ProxyPass / ajp://127.0.0.1:8102/
+		ProxyPassReverse / ajp://127.0.0.1:8102/
 		ProxyRequests Off
 
 		<Location />
