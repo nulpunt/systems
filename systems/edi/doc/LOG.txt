@@ -297,3 +297,7 @@ To activate the new configuration, you need to run:
   service apache2 restart
 root@edi:~# service apache2 restart
 Restarting web server: apache2.
+
+root@edi:~# nano /etc/default/jenkins
+root@edi:~# service jenkins restart
+Restarting Jenkins Continuous Integration Server: jenkins.

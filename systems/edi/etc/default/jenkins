@@ -42,7 +42,7 @@ HTTP_PORT=-1
 
 # port for AJP connector (disabled by default)
 AJP_ADDRESS=127.0.0.1
-AJP_PORT=8081
+AJP_PORT=8102
 
 # servlet context, important if you want to use apache proxying  
 PREFIX=/jenkins
