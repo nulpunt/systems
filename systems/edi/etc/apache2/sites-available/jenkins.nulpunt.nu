@@ -1,13 +1,15 @@
 <IfModule mod_ssl.c>
-	<VirtualHost :80>
+	<VirtualHost _default_:80>
 		ServerName jenkins.nulpunt.nu
-		ServerAdmin geertjohan.riemer@gmail.com #TODO: Update to jenkins@nulpunt.nu when mail forwarder is running
+		#TODO: Update to jenkins@nulpunt.nu when mail forwarder is running
+		ServerAdmin geertjohan.riemer@gmail.com
 		Redirect permanent / https://jenkins.nulpunt.nu
 	</VirtualHost>
 
-	<VirtualHost :443>
+	<VirtualHost _default_:443>
 		ServerName jenkins.nulpunt.nu
-		ServerAdmin geertjohan.riemer@gmail.com #TODO: Update to jenkins@nulpunt.nu when mail forwarder is running
+		#TODO: Update to jenkins@nulpunt.nu when mail forwarder is running
+		ServerAdmin geertjohan.riemer@gmail.com
 
 		ProxyPass / ajp://127.0.0.1:8102/jenkins/
 		ProxyPassReverse / ajp://127.0.0.1:8102/jenkins/
@@ -19,7 +21,7 @@
 		</Location>
 
 		LogLevel info ssl:warn
-		ErrorLog ${APACHE_LOG_DIR}/jenkins.nulpunt.nu/error.log
+		ErrorLog ${APACHE_LOG_DIR}/jenkins.nulpunt.nu.error.log
 
 		# TODO: create and use certificates for jenkins
 		SSLEngine on
