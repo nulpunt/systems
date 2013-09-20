@@ -266,3 +266,15 @@ Adding system user `jenkins' (UID 104) ...
 Adding new user `jenkins' (UID 104) with group `nogroup' ...
 Not creating home directory `/var/lib/jenkins'.
 Starting Jenkins Continuous Integration Server: jenkins.
+
+2013-09-20 22:08 geertjohan
+-----------------
+
+# edited and uploaded /etc/default/jenkins
+# edited and uploaded /etc/apache2/sites-available/jenkins.nulpunt.nu
+
+root@edi:~# service jenkins restart
+Restarting Jenkins Continuous Integration Server: jenkins.
+
+root@edi:~# service apache2 restart
+Restarting web server: apache2.
