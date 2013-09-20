@@ -7,7 +7,7 @@
 
 	<VirtualHost :443>
 		ServerName jenkins.nulpunt.nu
-		ServerAdmin jenkins@nulpunt.nu
+		ServerAdmin geertjohan.riemer@gmail.com #TODO: Update to jenkins@nulpunt.nu when mail forwarder is running
 
 		ProxyPass / ajp://127.0.0.1:8102/jenkins/
 		ProxyPassReverse / ajp://127.0.0.1:8102/jenkins/
