@@ -114,3 +114,155 @@ To activate the new configuration, you need to run:
 
 root@edi:~# service apache2 restart
 Restarting web server: apache2.
+
+2013-09-20 22:08 geertjohan
+-----------------
+
+root@edi:~# wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | apt-key add - 
+OK
+
+root@edi:~# nano /etc/apt/sources.list
+root@edi:~# apt-get update
+Get:1 http://security.debian.org wheezy/updates Release.gpg [836 B]
+Hit http://ftp.nl.debian.org wheezy Release.gpg                                                               
+Get:2 http://security.debian.org jessie/updates Release.gpg [836 B]                                
+Get:3 http://ftp.nl.debian.org wheezy-updates Release.gpg [1,571 B]                                            
+Get:4 http://security.debian.org wheezy/updates Release [102 kB]                                                   
+Get:5 http://ftp.nl.debian.org jessie Release.gpg [1,571 B]                                               
+Hit http://ftp.nl.debian.org wheezy Release                                                                                
+Get:6 http://ftp.nl.debian.org wheezy-updates Release [124 kB]                        
+Get:7 http://security.debian.org jessie/updates Release [77.8 kB]                                                                          
+Get:8 http://ftp.nl.debian.org jessie Release [170 kB]                                                                            
+Hit http://ftp.nl.debian.org wheezy/main Sources                                                                                           
+Hit http://ftp.nl.debian.org wheezy/non-free Sources                                           
+Get:9 http://security.debian.org wheezy/updates/main Sources [56.0 kB]                        
+Hit http://ftp.nl.debian.org wheezy/contrib Sources                                                   
+Hit http://ftp.nl.debian.org wheezy/main amd64 Packages
+Hit http://ftp.nl.debian.org wheezy/non-free amd64 Packages                                 
+Get:10 http://security.debian.org wheezy/updates/contrib Sources [14 B]                     
+Get:11 http://security.debian.org wheezy/updates/non-free Sources [14 B]                     
+Hit http://ftp.nl.debian.org wheezy/contrib amd64 Packages                                   
+Get:12 http://pkg.jenkins-ci.org binary/ Release.gpg [198 B]          
+Get:13 http://security.debian.org wheezy/updates/main amd64 Packages [103 kB]     
+Hit http://ftp.nl.debian.org wheezy/contrib Translation-en                                                   
+Hit http://ftp.nl.debian.org wheezy/main Translation-en                                                                     
+Hit http://ftp.nl.debian.org wheezy/non-free Translation-en                                                                 
+Get:14 http://security.debian.org wheezy/updates/contrib amd64 Packages [14 B]                                              
+Get:15 http://ftp.nl.debian.org wheezy-updates/main Sources [1,995 B]                                                       
+Get:16 http://security.debian.org wheezy/updates/non-free amd64 Packages [14 B]                                             
+Get:17 http://ftp.nl.debian.org wheezy-updates/contrib Sources [14 B]                                                       
+Get:18 http://security.debian.org wheezy/updates/contrib Translation-en [14 B]                                              
+Get:19 http://security.debian.org wheezy/updates/main Translation-en [60.4 kB]                                                    
+Get:20 http://security.debian.org wheezy/updates/non-free Translation-en [14 B]                                                   
+Get:21 http://security.debian.org jessie/updates/main Sources [14 B]                                                              
+Get:22 http://ftp.nl.debian.org wheezy-updates/non-free Sources [14 B]                                                            
+Get:23 http://security.debian.org jessie/updates/main amd64 Packages [14 B]                                                       
+Hit http://ftp.nl.debian.org wheezy-updates/main amd64 Packages/DiffIndex                     
+Get:24 http://ftp.nl.debian.org wheezy-updates/contrib amd64 Packages [14 B]
+Get:25 http://security.debian.org jessie/updates/main Translation-en [14 B]
+Get:26 http://ftp.nl.debian.org wheezy-updates/non-free amd64 Packages [14 B] 
+Get:27 http://ftp.nl.debian.org wheezy-updates/contrib Translation-en [14 B]
+Hit http://ftp.nl.debian.org wheezy-updates/main Translation-en/DiffIndex     
+Get:28 http://ftp.nl.debian.org wheezy-updates/non-free Translation-en [14 B]
+Get:29 http://ftp.nl.debian.org jessie/main Sources/DiffIndex [7,876 B]       
+Get:30 http://ftp.nl.debian.org jessie/main amd64 Packages/DiffIndex [7,876 B]
+Get:31 http://ftp.nl.debian.org jessie/main Translation-en/DiffIndex [7,876 B]
+Get:32 http://pkg.jenkins-ci.org binary/ Release [2,046 B]
+Get:33 http://ftp.nl.debian.org jessie/main 2013-09-18-0235.49.pdiff [26.0 kB]
+Get:34 http://ftp.nl.debian.org jessie/main amd64 2013-09-18-0235.49.pdiff [25.6 kB]    
+Get:35 http://ftp.nl.debian.org jessie/main 2013-09-18-0235.49.pdiff [26.0 kB]
+Get:36 http://ftp.nl.debian.org jessie/main 2013-09-18-0235.49.pdiff [11.8 kB]                      
+Get:37 http://pkg.jenkins-ci.org binary/ Packages [582 B]                                                            
+Get:38 http://ftp.nl.debian.org jessie/main amd64 2013-09-18-0235.49.pdiff [25.6 kB]
+Get:39 http://ftp.nl.debian.org jessie/main 2013-09-19-0234.56.pdiff [34.5 kB]
+Get:40 http://ftp.nl.debian.org jessie/main 2013-09-18-0235.49.pdiff [11.8 kB]                                
+Get:41 http://ftp.nl.debian.org jessie/main amd64 2013-09-19-0234.56.pdiff [24.3 kB]
+Get:42 http://ftp.nl.debian.org jessie/main 2013-09-19-0234.56.pdiff [34.5 kB]                                        
+Get:43 http://ftp.nl.debian.org jessie/main 2013-09-19-0234.56.pdiff [5,033 B]
+Ign http://pkg.jenkins-ci.org binary/ Translation-en_US                                                               
+Ign http://pkg.jenkins-ci.org binary/ Translation-en                          
+Get:44 http://ftp.nl.debian.org jessie/main amd64 2013-09-19-0234.56.pdiff [24.3 kB]
+Get:45 http://ftp.nl.debian.org jessie/main 2013-09-20-0235.18.pdiff [30.3 kB]
+Get:46 http://ftp.nl.debian.org jessie/main 2013-09-19-0234.56.pdiff [5,033 B]
+Get:47 http://ftp.nl.debian.org jessie/main amd64 2013-09-20-0235.18.pdiff [46.3 kB]
+Get:48 http://ftp.nl.debian.org jessie/main 2013-09-20-0235.18.pdiff [30.3 kB]
+Get:49 http://ftp.nl.debian.org jessie/main 2013-09-20-0235.18.pdiff [6,507 B]
+Get:50 http://ftp.nl.debian.org jessie/main amd64 2013-09-20-0235.18.pdiff [46.3 kB]
+Get:51 http://ftp.nl.debian.org jessie/main 2013-09-20-1435.08.pdiff [6,668 B]
+Get:52 http://ftp.nl.debian.org jessie/main 2013-09-20-0235.18.pdiff [6,507 B]
+Get:53 http://ftp.nl.debian.org jessie/main amd64 2013-09-20-1435.08.pdiff [26.3 kB]
+Get:54 http://ftp.nl.debian.org jessie/main 2013-09-20-1435.08.pdiff [6,668 B]
+Get:55 http://ftp.nl.debian.org jessie/main 2013-09-20-1435.08.pdiff [1,876 B]
+Get:56 http://ftp.nl.debian.org jessie/main amd64 2013-09-20-1435.08.pdiff [26.3 kB]
+Get:57 http://ftp.nl.debian.org jessie/main 2013-09-20-1435.08.pdiff [1,876 B]
+Fetched 972 kB in 11s (83.4 kB/s)                                  
+Reading package lists... Done
+
+root@edi:~# apt-get install jenkins
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following extra packages will be installed:
+  daemon gcj-4.7-base gcj-4.7-jre-headless libasound2 libgcj-common libgcj13 libpcsclite1
+Suggested packages:
+  fastjar gcj-4.7-jdk libgcj13-awt libasound2-plugins libgcj13-dbg pcscd
+Recommended packages:
+  gcj-4.7-jre-lib
+The following NEW packages will be installed:
+  daemon gcj-4.7-base gcj-4.7-jre-headless jenkins libasound2 libgcj-common libgcj13 libpcsclite1
+0 upgraded, 8 newly installed, 0 to remove and 7 not upgraded.
+Need to get 72.0 MB of archives.
+After this operation, 121 MB of additional disk space will be used.
+Do you want to continue [Y/n]? y
+Get:1 http://ftp.nl.debian.org/debian/ wheezy/main libasound2 amd64 1.0.25-4 [461 kB]
+Get:2 http://ftp.nl.debian.org/debian/ wheezy/main gcj-4.7-base amd64 4.7.2-3 [136 kB]
+Get:3 http://ftp.nl.debian.org/debian/ wheezy/main libgcj-common all 1:4.6.3-8 [139 kB]
+Get:4 http://ftp.nl.debian.org/debian/ wheezy/main libgcj13 amd64 4.7.2-3 [13.6 MB]
+Get:5 http://pkg.jenkins-ci.org/debian/ binary/ jenkins 1.531 [57.4 MB]
+Get:6 http://ftp.nl.debian.org/debian/ wheezy/main libpcsclite1 amd64 1.8.4-1+deb7u1 [57.0 kB]
+Get:7 http://ftp.nl.debian.org/debian/ wheezy/main daemon amd64 0.6.4-1 [97.4 kB]
+Get:8 http://ftp.nl.debian.org/debian/ wheezy/main gcj-4.7-jre-headless amd64 4.7.2-3 [53.1 kB]
+Fetched 72.0 MB in 6s (10.8 MB/s)
+Selecting previously unselected package libasound2:amd64.
+(Reading database ... 35141 files and directories currently installed.)
+Unpacking libasound2:amd64 (from .../libasound2_1.0.25-4_amd64.deb) ...
+Selecting previously unselected package gcj-4.7-base.
+Unpacking gcj-4.7-base (from .../gcj-4.7-base_4.7.2-3_amd64.deb) ...
+Selecting previously unselected package libgcj-common.
+Unpacking libgcj-common (from .../libgcj-common_1%3a4.6.3-8_all.deb) ...
+Selecting previously unselected package libgcj13.
+Unpacking libgcj13 (from .../libgcj13_4.7.2-3_amd64.deb) ...
+Selecting previously unselected package libpcsclite1:amd64.
+Unpacking libpcsclite1:amd64 (from .../libpcsclite1_1.8.4-1+deb7u1_amd64.deb) ...
+Selecting previously unselected package daemon.
+Unpacking daemon (from .../daemon_0.6.4-1_amd64.deb) ...
+Selecting previously unselected package gcj-4.7-jre-headless.
+Unpacking gcj-4.7-jre-headless (from .../gcj-4.7-jre-headless_4.7.2-3_amd64.deb) ...
+Selecting previously unselected package jenkins.
+Unpacking jenkins (from .../archives/jenkins_1.531_all.deb) ...
+Processing triggers for man-db ...
+Setting up libasound2:amd64 (1.0.25-4) ...
+Setting up gcj-4.7-base (4.7.2-3) ...
+Setting up libgcj-common (1:4.6.3-8) ...
+Setting up libgcj13 (4.7.2-3) ...
+Selecting previously unselected package libpcsclite1:amd64.
+Unpacking libpcsclite1:amd64 (from .../libpcsclite1_1.8.4-1+deb7u1_amd64.deb) ...
+Selecting previously unselected package daemon.
+Unpacking daemon (from .../daemon_0.6.4-1_amd64.deb) ...
+Selecting previously unselected package gcj-4.7-jre-headless.
+Unpacking gcj-4.7-jre-headless (from .../gcj-4.7-jre-headless_4.7.2-3_amd64.deb) ...
+Selecting previously unselected package jenkins.
+Unpacking jenkins (from .../archives/jenkins_1.531_all.deb) ...
+Processing triggers for man-db ...
+Setting up libasound2:amd64 (1.0.25-4) ...
+Setting up gcj-4.7-base (4.7.2-3) ...
+Setting up libgcj-common (1:4.6.3-8) ...
+Setting up libgcj13 (4.7.2-3) ...
+Setting up libpcsclite1:amd64 (1.8.4-1+deb7u1) ...
+Setting up daemon (0.6.4-1) ...
+Setting up gcj-4.7-jre-headless (4.7.2-3) ...
+Setting up jenkins (1.531) ...
+Adding system user `jenkins' (UID 104) ...
+Adding new user `jenkins' (UID 104) with group `nogroup' ...
+Not creating home directory `/var/lib/jenkins'.
+Starting Jenkins Continuous Integration Server: jenkins.
