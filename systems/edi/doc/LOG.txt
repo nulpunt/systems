@@ -1689,3 +1689,378 @@ Restarting Jenkins Continuous Integration Server: jenkins.
 root@edi:~# nano /etc/apache2/sites-available/jenkins.nulpunt.nu.conf
 root@edi:~# service apache2 reload
 Reloading web server: apache2.
+
+
+2013-09-21 09:54 geertjohan
+-----------------
+
+root@edi:~# apt-get remove --purge openjdk-7-jre-headless
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages will be REMOVED:
+  ca-certificates-java* icedtea-7-jre-jamvm* openjdk-7-jre-headless* openjdk-7-jre-lib*
+0 upgraded, 0 newly installed, 4 to remove and 7 not upgraded.
+After this operation, 57.7 MB disk space will be freed.
+Do you want to continue [Y/n]? y
+(Reading database ... 36612 files and directories currently installed.)
+Removing icedtea-7-jre-jamvm:amd64 ...
+Removing openjdk-7-jre-lib ...
+Removing ca-certificates-java ...
+Purging configuration files for ca-certificates-java ...
+Removing openjdk-7-jre-headless:amd64 ...
+update-alternatives: using /usr/bin/gij-4.7 to provide /usr/bin/java (java) in auto mode
+update-alternatives: using /usr/bin/gkeytool-4.7 to provide /usr/bin/keytool (keytool) in auto mode
+update-alternatives: using /usr/bin/grmid-4.7 to provide /usr/bin/rmid (rmid) in auto mode
+update-alternatives: using /usr/bin/grmiregistry-4.7 to provide /usr/bin/rmiregistry (rmiregistry) in auto mode
+update-alternatives: using /usr/bin/gorbd-4.7 to provide /usr/bin/orbd (orbd) in auto mode
+Purging configuration files for openjdk-7-jre-headless:amd64 ...
+Processing triggers for ca-certificates ...
+Updating certificates in /etc/ssl/certs... 0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d....done.
+
+root@edi:~# apt-get autoremove
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages will be REMOVED:
+  dbus fontconfig-config fonts-dejavu-core java-common libavahi-client3 libavahi-common-data libavahi-common3 libcups2 libdbus-1-3 libfontconfig1 libjpeg8 liblcms2-2 libnspr4 libnss3 libsystemd-login0
+  ttf-dejavu-core tzdata-java
+0 upgraded, 0 newly installed, 17 to remove and 7 not upgraded.
+After this operation, 12.3 MB disk space will be freed.
+Do you want to continue [Y/n]? y
+(Reading database ... 36343 files and directories currently installed.)
+Removing dbus ...
+Stopping system message bus: dbus.
+Removing libfontconfig1:amd64 ...
+Removing fontconfig-config ...
+Removing ttf-dejavu-core ...
+Removing fonts-dejavu-core ...
+Removing java-common ...
+Removing libcups2:amd64 ...
+Removing libavahi-client3:amd64 ...
+Removing libavahi-common3:amd64 ...
+Removing libavahi-common-data:amd64 ...
+Removing libdbus-1-3:amd64 ...
+Removing libjpeg8:amd64 ...
+Removing liblcms2-2:amd64 ...
+Removing libnss3:amd64 ...
+Removing libnspr4:amd64 ...
+Removing libsystemd-login0:amd64 ...
+Removing tzdata-java ...
+Processing triggers for man-db ...
+
+root@edi:~# aptitude install openjdk-7-jre-headless
+The following NEW packages will be installed:
+  ca-certificates-java{a} dbus{a} fontconfig-config{a} icedtea-7-jre-jamvm{a} java-common{a} libavahi-client3{a} libavahi-common-data{a} libavahi-common3{a} libcups2{a} libdbus-1-3{a} libfontconfig1{a} 
+  libjpeg8{a} liblcms2-2{a} libnspr4{a} libnss3{a} libsystemd-login0{a} openjdk-7-jre-headless openjdk-7-jre-lib{a} ttf-dejavu-core{a} tzdata-java{ab} 
+0 packages upgraded, 20 newly installed, 0 to remove and 7 not upgraded.
+Need to get 45.6 MB/46.1 MB of archives. After unpacking 69.6 MB will be used.
+The following packages have unmet dependencies:
+ tzdata-java : Depends: tzdata (= 2013c-0wheezy1) but 2013d-1 is installed.
+The following actions will resolve these dependencies:
+
+     Keep the following packages at their current version:
+1)     ca-certificates-java [Not Installed]               
+2)     icedtea-7-jre-jamvm [Not Installed]                
+3)     openjdk-7-jre-headless [Not Installed]             
+4)     openjdk-7-jre-lib [Not Installed]                  
+5)     tzdata-java [Not Installed]                        
+
+
+
+Accept this solution? [Y/n/q/?] n
+The following actions will resolve these dependencies:
+
+     Downgrade the following packages:                           
+1)     tzdata [2013d-1 (now, testing) -> 2013c-0wheezy1 (stable)]
+
+
+
+Accept this solution? [Y/n/q/?] y
+The following packages will be DOWNGRADED:
+  tzdata 
+The following NEW packages will be installed:
+  ca-certificates-java{a} dbus{a} fontconfig-config{a} icedtea-7-jre-jamvm{a} java-common{a} libavahi-client3{a} libavahi-common-data{a} libavahi-common3{a} libcups2{a} libdbus-1-3{a} libfontconfig1{a} 
+  libjpeg8{a} liblcms2-2{a} libnspr4{a} libnss3{a} libsystemd-login0{a} openjdk-7-jre-headless openjdk-7-jre-lib{a} ttf-dejavu-core{a} tzdata-java{a} 
+0 packages upgraded, 20 newly installed, 1 downgraded, 0 to remove and 7 not upgraded.
+Need to get 45.6 MB/46.6 MB of archives. After unpacking 69.6 MB will be used.
+Do you want to continue? [Y/n/?] y
+Get: 1 http://ftp.nl.debian.org/debian/ wheezy/main libcups2 amd64 1.5.3-5 [256 kB]
+Get: 2 http://security.debian.org/ wheezy/updates/main libdbus-1-3 amd64 1.6.8-1+deb7u1 [173 kB]
+Get: 3 http://ftp.nl.debian.org/debian/ wheezy/main ttf-dejavu-core all 2.33-3 [1,021 kB]
+Get: 4 http://security.debian.org/ wheezy/updates/main openjdk-7-jre-lib all 7u25-2.3.10-1~deb7u1 [5,541 kB]
+Get: 5 http://ftp.nl.debian.org/debian/ wheezy/main fontconfig-config all 2.9.0-7.1 [233 kB]
+Get: 6 http://ftp.nl.debian.org/debian/ wheezy/main libfontconfig1 amd64 2.9.0-7.1 [300 kB]
+Get: 7 http://security.debian.org/ wheezy/updates/main openjdk-7-jre-headless amd64 7u25-2.3.10-1~deb7u1 [35.5 MB]
+Get: 8 http://ftp.nl.debian.org/debian/ wheezy/main libnspr4 amd64 2:4.9.2-1 [140 kB]  
+Get: 9 http://ftp.nl.debian.org/debian/ wheezy/main libnss3 amd64 2:3.14.3-1 [1,063 kB]
+Get: 10 http://ftp.nl.debian.org/debian/ wheezy/main ca-certificates-java all 20121112+nmu2 [14.9 kB]
+Get: 11 http://ftp.nl.debian.org/debian/ wheezy/main tzdata-java all 2013c-0wheezy1 [152 kB]
+Get: 12 http://ftp.nl.debian.org/debian/ wheezy/main java-common all 0.47 [66.1 kB]
+Get: 13 http://ftp.nl.debian.org/debian/ wheezy/main libsystemd-login0 amd64 44-11 [29.4 kB]
+Get: 14 http://security.debian.org/ wheezy/updates/main dbus amd64 1.6.8-1+deb7u1 [399 kB]    
+Get: 15 http://security.debian.org/ wheezy/updates/main icedtea-7-jre-jamvm amd64 7u25-2.3.10-1~deb7u1 [631 kB]
+Fetched 45.6 MB in 5s (8,959 kB/s)            
+Preconfiguring packages ...
+Selecting previously unselected package libavahi-common-data:amd64.
+(Reading database ... 35567 files and directories currently installed.)
+Unpacking libavahi-common-data:amd64 (from .../libavahi-common-data_0.6.31-2_amd64.deb) ...
+Selecting previously unselected package libavahi-common3:amd64.
+Unpacking libavahi-common3:amd64 (from .../libavahi-common3_0.6.31-2_amd64.deb) ...
+Selecting previously unselected package libdbus-1-3:amd64.
+Unpacking libdbus-1-3:amd64 (from .../libdbus-1-3_1.6.8-1+deb7u1_amd64.deb) ...
+Selecting previously unselected package libavahi-client3:amd64.
+Unpacking libavahi-client3:amd64 (from .../libavahi-client3_0.6.31-2_amd64.deb) ...
+Selecting previously unselected package libcups2:amd64.
+Unpacking libcups2:amd64 (from .../libcups2_1.5.3-5_amd64.deb) ...
+Selecting previously unselected package ttf-dejavu-core.
+Unpacking ttf-dejavu-core (from .../ttf-dejavu-core_2.33-3_all.deb) ...
+Selecting previously unselected package fontconfig-config.
+Unpacking fontconfig-config (from .../fontconfig-config_2.9.0-7.1_all.deb) ...
+Selecting previously unselected package libfontconfig1:amd64.
+Unpacking libfontconfig1:amd64 (from .../libfontconfig1_2.9.0-7.1_amd64.deb) ...
+Selecting previously unselected package libjpeg8:amd64.
+Unpacking libjpeg8:amd64 (from .../libjpeg8_8d-1_amd64.deb) ...
+Selecting previously unselected package liblcms2-2:amd64.
+Unpacking liblcms2-2:amd64 (from .../liblcms2-2_2.2+git20110628-2.2_amd64.deb) ...
+Selecting previously unselected package libnspr4:amd64.
+Unpacking libnspr4:amd64 (from .../libnspr4_2%3a4.9.2-1_amd64.deb) ...
+Selecting previously unselected package libnss3:amd64.
+Unpacking libnss3:amd64 (from .../libnss3_2%3a3.14.3-1_amd64.deb) ...
+Selecting previously unselected package openjdk-7-jre-lib.
+Unpacking openjdk-7-jre-lib (from .../openjdk-7-jre-lib_7u25-2.3.10-1~deb7u1_all.deb) ...
+Selecting previously unselected package ca-certificates-java.
+Unpacking ca-certificates-java (from .../ca-certificates-java_20121112+nmu2_all.deb) ...
+dpkg: warning: downgrading tzdata from 2013d-1 to 2013c-0wheezy1
+Preparing to replace tzdata 2013d-1 (using .../tzdata_2013c-0wheezy1_all.deb) ...
+Unpacking replacement tzdata ...
+Processing triggers for man-db ...
+Processing triggers for ca-certificates ...
+Updating certificates in /etc/ssl/certs... 0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d....done.
+Setting up tzdata (2013c-0wheezy1) ...
+
+Current default time zone: 'Europe/Amsterdam'
+Local time is now:      Sat Sep 21 09:58:05 CEST 2013.
+Universal Time is now:  Sat Sep 21 07:58:05 UTC 2013.
+Run 'dpkg-reconfigure tzdata' if you wish to change it.
+
+Selecting previously unselected package tzdata-java.
+(Reading database ... 35814 files and directories currently installed.)
+Unpacking tzdata-java (from .../tzdata-java_2013c-0wheezy1_all.deb) ...
+Selecting previously unselected package java-common.
+Unpacking java-common (from .../java-common_0.47_all.deb) ...
+Selecting previously unselected package openjdk-7-jre-headless:amd64.
+Unpacking openjdk-7-jre-headless:amd64 (from .../openjdk-7-jre-headless_7u25-2.3.10-1~deb7u1_amd64.deb) ...
+Selecting previously unselected package libsystemd-login0:amd64.
+Unpacking libsystemd-login0:amd64 (from .../libsystemd-login0_44-11_amd64.deb) ...
+Selecting previously unselected package dbus.
+Unpacking dbus (from .../dbus_1.6.8-1+deb7u1_amd64.deb) ...
+Selecting previously unselected package icedtea-7-jre-jamvm:amd64.
+Unpacking icedtea-7-jre-jamvm:amd64 (from .../icedtea-7-jre-jamvm_7u25-2.3.10-1~deb7u1_amd64.deb) ...
+Processing triggers for man-db ...
+Setting up libavahi-common-data:amd64 (0.6.31-2) ...
+Setting up libavahi-common3:amd64 (0.6.31-2) ...
+Setting up libdbus-1-3:amd64 (1.6.8-1+deb7u1) ...
+Setting up libavahi-client3:amd64 (0.6.31-2) ...
+Setting up libcups2:amd64 (1.5.3-5) ...
+Setting up ttf-dejavu-core (2.33-3) ...
+Setting up fontconfig-config (2.9.0-7.1) ...
+Installing new version of config file /etc/fonts/conf.d/README ...
+Installing new version of config file /etc/fonts/fonts.conf ...
+Setting up libfontconfig1:amd64 (2.9.0-7.1) ...
+Setting up libjpeg8:amd64 (8d-1) ...
+Setting up liblcms2-2:amd64 (2.2+git20110628-2.2) ...
+Setting up libnspr4:amd64 (2:4.9.2-1) ...
+Setting up libnss3:amd64 (2:3.14.3-1) ...
+Setting up tzdata-java (2013c-0wheezy1) ...
+Setting up java-common (0.47) ...
+Setting up libsystemd-login0:amd64 (44-11) ...
+Setting up dbus (1.6.8-1+deb7u1) ...
+Failed to open connection to "system" message bus: Failed to connect to socket /var/run/dbus/system_bus_socket: No such file or directory
+Starting system message bus: dbus.
+Setting up openjdk-7-jre-headless:amd64 (7u25-2.3.10-1~deb7u1) ...
+update-alternatives: using /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java to provide /usr/bin/java (java) in auto mode
+update-alternatives: using /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/keytool to provide /usr/bin/keytool (keytool) in auto mode
+update-alternatives: using /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/pack200 to provide /usr/bin/pack200 (pack200) in auto mode
+update-alternatives: using /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/rmid to provide /usr/bin/rmid (rmid) in auto mode
+update-alternatives: using /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/rmiregistry to provide /usr/bin/rmiregistry (rmiregistry) in auto mode
+update-alternatives: using /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/unpack200 to provide /usr/bin/unpack200 (unpack200) in auto mode
+update-alternatives: using /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/orbd to provide /usr/bin/orbd (orbd) in auto mode
+update-alternatives: using /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/servertool to provide /usr/bin/servertool (servertool) in auto mode
+update-alternatives: using /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/tnameserv to provide /usr/bin/tnameserv (tnameserv) in auto mode
+update-alternatives: using /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/jexec to provide /usr/bin/jexec (jexec) in auto mode
+Setting up ca-certificates-java (20121112+nmu2) ...
+Adding debian:Equifax_Secure_Global_eBusiness_CA.pem
+Adding debian:AffirmTrust_Premium_ECC.pem
+Adding debian:ca.pem
+Adding debian:Hellenic_Academic_and_Research_Institutions_RootCA_2011.pem
+Adding debian:Verisign_Class_3_Public_Primary_Certification_Authority_-_G3.pem
+Adding debian:SwissSign_Platinum_CA_-_G2.pem
+Adding debian:ApplicationCA_-_Japanese_Government.pem
+Adding debian:GlobalSign_Root_CA_-_R3.pem
+Adding debian:Certum_Trusted_Network_CA.pem
+Adding debian:XRamp_Global_CA_Root.pem
+Adding debian:AffirmTrust_Commercial.pem
+Adding debian:Visa_eCommerce_Root.pem
+Adding debian:certSIGN_ROOT_CA.pem
+Adding debian:Verisign_Class_2_Public_Primary_Certification_Authority_-_G3.pem
+Adding debian:AddTrust_Qualified_Certificates_Root.pem
+Adding debian:Equifax_Secure_eBusiness_CA_2.pem
+Adding debian:DigiCert_Global_Root_CA.pem
+Adding debian:Trustis_FPS_Root_CA.pem
+Adding debian:EBG_Elektronik_Sertifika_Hizmet_Sağlayıcısı.pem
+Adding debian:spi-cacert-2008.pem
+Adding debian:Comodo_AAA_Services_root.pem
+Adding debian:EC-ACC.pem
+Adding debian:Verisign_Class_3_Public_Primary_Certification_Authority_-_G2.pem
+Adding debian:Go_Daddy_Class_2_CA.pem
+Adding debian:QuoVadis_Root_CA_3.pem
+Adding debian:GeoTrust_Primary_Certification_Authority_-_G2.pem
+Adding debian:T-TeleSec_GlobalRoot_Class_3.pem
+Adding debian:A-Trust-nQual-03.pem
+Adding debian:cacert.org.pem
+Adding debian:Verisign_Class_1_Public_Primary_Certification_Authority_-_G3.pem
+Adding debian:Digital_Signature_Trust_Co._Global_CA_1.pem
+Adding debian:ssl-cert-snakeoil.pem
+Adding debian:UTN_USERFirst_Hardware_Root_CA.pem
+Adding debian:WellsSecure_Public_Root_Certificate_Authority.pem
+Adding debian:Chambers_of_Commerce_Root_-_2008.pem
+Adding debian:GlobalSign_Root_CA_-_R2.pem
+Adding debian:NetLock_Qualified_=Class_QA=_Root.pem
+Adding debian:Verisign_Class_4_Public_Primary_Certification_Authority_-_G3.pem
+Adding debian:AffirmTrust_Networking.pem
+Adding debian:AddTrust_Public_Services_Root.pem
+Adding debian:Starfield_Services_Root_Certificate_Authority_-_G2.pem
+Adding debian:spi-ca-2003.pem
+Adding debian:COMODO_Certification_Authority.pem
+Adding debian:S-TRUST_Authentication_and_Encryption_Root_CA_2005_PN.pem
+Adding debian:Staat_der_Nederlanden_Root_CA.pem
+Adding debian:Swisscom_Root_CA_1.pem
+Adding debian:TWCA_Root_Certification_Authority.pem
+Adding debian:AC_Raíz_Certicámara_S.A..pem
+Adding debian:Verisign_Class_1_Public_Primary_Certification_Authority_-_G2.pem
+Adding debian:America_Online_Root_Certification_Authority_1.pem
+Adding debian:TURKTRUST_Certificate_Services_Provider_Root_2.pem
+Adding debian:ACEDICOM_Root.pem
+Adding debian:GlobalSign_Root_CA.pem
+Adding debian:SecureTrust_CA.pem
+Adding debian:SwissSign_Gold_CA_-_G2.pem
+Adding debian:thawte_Primary_Root_CA_-_G2.pem
+Adding debian:America_Online_Root_Certification_Authority_2.pem
+Adding debian:SwissSign_Silver_CA_-_G2.pem
+Adding debian:ePKI_Root_Certification_Authority.pem
+Adding debian:StartCom_Certification_Authority_G2.pem
+Adding debian:Microsec_e-Szigno_Root_CA.pem
+Adding debian:Buypass_Class_3_Root_CA.pem
+Adding debian:TURKTRUST_Certificate_Services_Provider_Root_1.pem
+Adding debian:Microsec_e-Szigno_Root_CA_2009.pem
+Adding debian:Certinomis_-_Autorité_Racine.pem
+Adding debian:Thawte_Premium_Server_CA.pem
+Adding debian:EE_Certification_Centre_Root_CA.pem
+Adding debian:Security_Communication_Root_CA.pem
+Adding debian:Certplus_Class_2_Primary_CA.pem
+Adding debian:Global_Chambersign_Root_-_2008.pem
+Adding debian:Security_Communication_EV_RootCA1.pem
+Adding debian:IGC_A.pem
+Adding debian:QuoVadis_Root_CA_2.pem
+Adding debian:Certigna.pem
+Adding debian:Buypass_Class_3_CA_1.pem
+Adding debian:GeoTrust_Primary_Certification_Authority.pem
+Adding debian:SecureSign_RootCA11.pem
+Adding debian:DigiCert_High_Assurance_EV_Root_CA.pem
+Adding debian:Security_Communication_RootCA2.pem
+Adding debian:Actalis_Authentication_Root_CA.pem
+Adding debian:Network_Solutions_Certificate_Authority.pem
+Adding debian:NetLock_Business_=Class_B=_Root.pem
+Adding debian:TC_TrustCenter_Universal_CA_III.pem
+Adding debian:Sonera_Class_2_Root_CA.pem
+Adding debian:Go_Daddy_Root_Certificate_Authority_-_G2.pem
+Adding debian:Thawte_Server_CA.pem
+Adding debian:Wells_Fargo_Root_CA.pem
+Adding debian:Comodo_Secure_Services_root.pem
+Adding debian:QuoVadis_Root_CA.pem
+Adding debian:RSA_Security_2048_v3.pem
+Adding debian:Izenpe.com.pem
+Adding debian:Firmaprofesional_Root_CA.pem
+Adding debian:NetLock_Notary_=Class_A=_Root.pem
+Adding debian:AffirmTrust_Premium.pem
+Adding debian:NetLock_Express_=Class_C=_Root.pem
+Adding debian:TDC_Internet_Root_CA.pem
+Adding debian:Digital_Signature_Trust_Co._Global_CA_3.pem
+Adding debian:ValiCert_Class_2_VA.pem
+Adding debian:Sonera_Class_1_Root_CA.pem
+Adding debian:TC_TrustCenter_Class_3_CA_II.pem
+Adding debian:Entrust.net_Premium_2048_Secure_Server_CA.pem
+Adding debian:TC_TrustCenter_Universal_CA_I.pem
+Adding debian:Cybertrust_Global_Root.pem
+Adding debian:Equifax_Secure_CA.pem
+Adding debian:DST_Root_CA_X3.pem
+Adding debian:nulpunt.argure.nl.pem
+Adding debian:Juur-SK.pem
+Adding debian:Deutsche_Telekom_Root_CA_2.pem
+Adding debian:sub.class2.server.sha2.ca.pem
+Adding debian:Entrust_Root_Certification_Authority.pem
+Adding debian:GeoTrust_Global_CA.pem
+Adding debian:thawte_Primary_Root_CA_-_G3.pem
+Adding debian:thawte_Primary_Root_CA.pem
+Adding debian:CNNIC_ROOT.pem
+Adding debian:Verisign_Class_2_Public_Primary_Certification_Authority_-_G2.pem
+Adding debian:Root_CA_Generalitat_Valenciana.pem
+Adding debian:UTN_DATACorp_SGC_Root_CA.pem
+Adding debian:Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.pem
+Adding debian:AddTrust_External_Root.pem
+Adding debian:Verisign_Class_1_Public_Primary_Certification_Authority.pem
+Adding debian:GTE_CyberTrust_Global_Root.pem
+Adding debian:Camerfirma_Global_Chambersign_Root.pem
+Adding debian:COMODO_ECC_Certification_Authority.pem
+Adding debian:E-Guven_Kok_Elektronik_Sertifika_Hizmet_Saglayicisi.pem
+Adding debian:Buypass_Class_2_Root_CA.pem
+Adding debian:Verisign_Class_3_Public_Primary_Certification_Authority.pem
+Adding debian:DST_ACES_CA_X6.pem
+Adding debian:Starfield_Root_Certificate_Authority_-_G2.pem
+Adding debian:ComSign_Secured_CA.pem
+Adding debian:TC_TrustCenter_Class_2_CA_II.pem
+Adding debian:GeoTrust_Universal_CA.pem
+Adding debian:Secure_Global_CA.pem
+Adding debian:GeoTrust_Primary_Certification_Authority_-_G3.pem
+Adding debian:Equifax_Secure_eBusiness_CA_1.pem
+Adding debian:GeoTrust_Universal_CA_2.pem
+Adding debian:StartCom_Certification_Authority.pem
+Adding debian:Starfield_Class_2_CA.pem
+Adding debian:GeoTrust_Global_CA_2.pem
+Adding debian:Taiwan_GRCA.pem
+Adding debian:Camerfirma_Chambers_of_Commerce_Root.pem
+Adding debian:Staat_der_Nederlanden_Root_CA_-_G2.pem
+Adding debian:TDC_OCES_Root_CA.pem
+Adding debian:Buypass_Class_2_CA_1.pem
+Adding debian:NetLock_Arany_=Class_Gold=_Főtanúsítvány.pem
+Adding debian:OISTE_WISeKey_Global_Root_GA_CA.pem
+Adding debian:Certum_Root_CA.pem
+Adding debian:CA_Disig.pem
+Adding debian:RSA_Root_Certificate_1.pem
+Adding debian:Comodo_Trusted_Services_root.pem
+Adding debian:ValiCert_Class_1_VA.pem
+Adding debian:Hongkong_Post_Root_CA_1.pem
+Adding debian:VeriSign_Class_3_Public_Primary_Certification_Authority_-_G4.pem
+Adding debian:Baltimore_CyberTrust_Root.pem
+Adding debian:VeriSign_Class_3_Public_Primary_Certification_Authority_-_G5.pem
+Adding debian:AddTrust_Low-Value_Services_Root.pem
+Adding debian:ComSign_CA.pem
+Adding debian:DigiCert_Assured_ID_Root_CA.pem
+Adding debian:UTN_USERFirst_Email_Root_CA.pem
+Adding debian:Entrust.net_Secure_Server_CA.pem
+Adding debian:VeriSign_Universal_Root_Certification_Authority.pem
+Adding debian:TÜBİTAK_UEKAE_Kök_Sertifika_Hizmet_Sağlayıcısı_-_Sürüm_3.pem
+done.
+Setting up icedtea-7-jre-jamvm:amd64 (7u25-2.3.10-1~deb7u1) ...
+Setting up openjdk-7-jre-lib (7u25-2.3.10-1~deb7u1) ...
+Processing triggers for ca-certificates ...
+Updating certificates in /etc/ssl/certs... 0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d....
+done.
+done.
+
+root@edi:~# service jenkins restart
+Restarting Jenkins Continuous Integration Server: jenkins.
