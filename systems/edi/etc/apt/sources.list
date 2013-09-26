@@ -19,4 +19,5 @@ deb-src http://ftp.nl.debian.org/debian/ jessie main
 deb http://security.debian.org/ jessie/updates main
 deb-src http://security.debian.org/ jessie/updates main
 
+# jenkins
 deb http://pkg.jenkins-ci.org/debian binary/
