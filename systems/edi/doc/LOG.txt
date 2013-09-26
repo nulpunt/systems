@@ -2105,3 +2105,28 @@ The following NEW packages will be installed:
   libsocket-perl{a} libsocket6-perl{a} libtommath0{a} 
   liburi-perl{a} libwww-perl{a} libwww-robotrules-perl{a} 
   re2c{a} spamassassin spamc{a} 
+
+root@edi:/var/run/clamav# aptitude remove --purge clamav
+The following packages will be REMOVED:  
+  clamav clamav-base{pu} clamav-freshclam{pu} libclamav6{pu} 
+  libtommath0{pu} 
+
+root@edi:/var/run/clamav# aptitude install clamav-daemon clamav-freshclam      
+The following NEW packages will be installed:
+  clamav{a} clamav-base{a} clamav-daemon clamav-freshclam libclamav6{a} 
+  libtommath0{a} 
+
+root@edi:/var/lib/clamav# freshclam
+ClamAV update process started at Thu Sep 26 22:14:15 2013
+WARNING: Your ClamAV installation is OUTDATED!
+WARNING: Local version: 0.97.8 Recommended version: 0.98
+DON'T PANIC! Read http://www.clamav.net/support/faq
+Downloading main.cvd [100%]
+main.cvd updated (version: 55, sigs: 2424225, f-level: 60, builder: neo)
+Downloading daily.cvd [100%]
+daily.cvd updated (version: 17902, sigs: 379088, f-level: 63, builder: neo)
+Downloading bytecode.cvd [100%]
+bytecode.cvd updated (version: 226, sigs: 43, f-level: 63, builder: neo)
+Database updated (2803356 signatures) from db.local.clamav.net (IP: 62.201.161.84)
+
+root@edi:~# usermod -a -G Debian-exim clamav

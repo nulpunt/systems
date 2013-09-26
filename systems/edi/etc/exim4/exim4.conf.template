@@ -934,7 +934,7 @@ acl_check_data:
   #             X-Spam_bar: $spam_bar\n\
   #             X-Spam_report: $spam_report
 
-  warn spam = nobody:tru$
+  warn spam = nobody:true
     add_header = X-Spam-Score: $spam_score ($spam_bar)
 
   warn spam = nobody
