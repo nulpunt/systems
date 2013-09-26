@@ -1,0 +1,27 @@
+# /etc/aliases
+mailer-daemon: postmaster
+postmaster: root
+nobody: root
+hostmaster: root
+usenet: root
+news: root
+webmaster: root
+www: root
+ftp: root
+abuse: root
+noc: root
+security: root
+root: sysadmins
+clamav: root
+contact: management
+info: management
+
+geertjohan: gjr19912@gmail.com
+jonas: contact@jonasstaal.nl
+vinca: vinca@metahaven.net
+daniel: daniel@metahaven.net
+renee: renee@jonasstaal.nl
+younes: younes@jonasstaal.nl
+
+sysadmins: argure,geertjohan
+management: jonas,vinca,daniel,renee,younes
