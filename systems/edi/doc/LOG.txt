@@ -2064,3 +2064,44 @@ done.
 
 root@edi:~# service jenkins restart
 Restarting Jenkins Continuous Integration Server: jenkins.
+
+2013-09-26 argure
+-----------------
+
+root@edi:~# aptitude install exim4-daemon-heavy
+The following NEW packages will be installed:
+  exim4-daemon-heavy libperl5.14{a} 
+The following packages will be REMOVED:
+  exim4-daemon-light{a} 
+
+root@edi:~# dpkg-reconfigure exim4-config
+General type of mail configuration: internet site; mail is sent and received \
+	directly using SMTP.
+System mail name: edi.nulpunt.nu
+IP-addresses to listen on for incoming SMTP connections:
+Other destinations for which mail is accepted: nulpunt.nu
+Domains to relay mail for:
+Machines to relay mail for:
+Keep number of DNS-queries minimal?: No
+Delivery method for local mail: Maildir format in home directory
+Split configuration into small files?: No
+Root and postmaster recipient: argure
+
+root@edi:~# aptitude install spamassassin clamav
+The following NEW packages will be installed:
+  clamav clamav-base{a} clamav-freshclam{a} libclamav6{a} 
+  libdigest-hmac-perl{a} libencode-locale-perl{a} 
+  libfile-listing-perl{a} libfont-afm-perl{a} 
+  libhtml-form-perl{a} libhtml-format-perl{a} 
+  libhtml-parser-perl{a} libhtml-tagset-perl{a} 
+  libhtml-tree-perl{a} libhttp-cookies-perl{a} 
+  libhttp-daemon-perl{a} libhttp-date-perl{a} 
+  libhttp-message-perl{a} libhttp-negotiate-perl{a} 
+  libio-socket-inet6-perl{a} libio-socket-ip-perl{a} 
+  libio-socket-ssl-perl{a} liblwp-mediatypes-perl{a} 
+  liblwp-protocol-https-perl{a} libmail-spf-perl{a} 
+  libmailtools-perl{a} libnet-dns-perl{a} libnet-http-perl{a} 
+  libnet-ip-perl{a} libnet-ssleay-perl{a} libnetaddr-ip-perl{a} 
+  libsocket-perl{a} libsocket6-perl{a} libtommath0{a} 
+  liburi-perl{a} libwww-perl{a} libwww-robotrules-perl{a} 
+  re2c{a} spamassassin spamc{a} 

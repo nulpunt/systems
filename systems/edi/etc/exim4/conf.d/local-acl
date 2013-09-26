@@ -1,0 +1,3 @@
+deny
+ malware = *
+ message = This message was detected as possible malware ($malware_name).
