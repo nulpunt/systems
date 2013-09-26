@@ -2146,3 +2146,16 @@ The following NEW packages will be installed:
   python-oauth{a} python-paramiko{a} python-pkg-resources{a} 
   python-simplejson{a} python-wadllib{a} python-zope.interface{a} 
   subversion 
+
+root@edi:~# aptitude install dovecot-imapd       
+The following NEW packages will be installed:
+  dovecot-core{a} dovecot-imapd 
+
+2013-09-27 argure
+-----------------
+
+root@edi:/etc/exim4# aptitude install sasl2-bin
+The following NEW packages will be installed:
+  db-util{a} sasl2-bin 
+
+root@edi:/var/log/exim4# adduser Debian-exim sasl
