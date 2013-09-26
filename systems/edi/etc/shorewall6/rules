@@ -1,0 +1,28 @@
+#
+# Shorewall6 version 4 - Rules File
+#
+# For information about entries in this file, type "man shorewall6-rules"
+#
+# The manpage is also online at
+# http://www.shorewall.net/manpages6/shorewall6-rules.html
+#
+############################################################################################################################
+#ACTION		SOURCE		DEST		PROTO	DEST	SOURCE		ORIGINAL	RATE		USER/	MARK
+#							PORT	PORT(S)		DEST		LIMIT		GROUP
+
+# ICMP
+ACCEPT		net		fw		icmp	8
+ACCEPT		fw		net		icmp
+
+# SSH
+ACCEPT		net		fw		tcp	22
+
+# SMTP
+ACCEPT		net		fw		tcp	25
+
+# HTTP(S)
+ACCEPT		net		fw		tcp	80
+ACCEPT		net		fw		tcp	443
+
+# IMAP
+ACCEPT		net		fw		tcp	143

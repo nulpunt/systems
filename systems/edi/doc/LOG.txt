@@ -2159,3 +2159,13 @@ The following NEW packages will be installed:
   db-util{a} sasl2-bin 
 
 root@edi:/var/log/exim4# adduser Debian-exim sasl
+
+root@edi:~# aptitude install shorewall shorewall6
+The following NEW packages will be installed:
+  shorewall shorewall-core{a} shorewall6 
+
+root@edi:/etc/shorewall6# ln -s /etc/shorewall/policy policy
+
+root@edi:~# aptitude install fail2ban
+The following NEW packages will be installed:
+  fail2ban gamin{a} libgamin0{a} python-central{a} python-gamin{a} 
