@@ -2130,3 +2130,5 @@ bytecode.cvd updated (version: 226, sigs: 43, f-level: 63, builder: neo)
 Database updated (2803356 signatures) from db.local.clamav.net (IP: 62.201.161.84)
 
 root@edi:~# usermod -a -G Debian-exim clamav
+
+root@edi:/srv# a2dissite nulpunt.argure.nl 
