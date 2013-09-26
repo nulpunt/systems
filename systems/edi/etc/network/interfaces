@@ -1,0 +1,23 @@
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+allow-hotplug eth0
+iface eth0 inet static
+	address 82.94.175.151
+	netmask 255.255.255.192
+	network 82.94.175.128
+	broadcast 82.94.175.191
+	gateway 82.94.175.129
+	# dns-* options are implemented by the resolvconf package, if installed
+	dns-nameservers 185.19.104.45 185.19.105.14
+	dns-search nulpunt.nu
+
+iface eth0 inet6 static
+	pre-up modprobe ipv6
+	address 2001:888:2000:73::151/72
+	gateway 2001:888:2000:73::1
