@@ -2132,3 +2132,7 @@ Database updated (2803356 signatures) from db.local.clamav.net (IP: 62.201.161.8
 root@edi:~# usermod -a -G Debian-exim clamav
 
 root@edi:/srv# a2dissite nulpunt.argure.nl 
+
+The following NEW packages will be installed:
+  golang golang-doc{a} golang-go{a} golang-go-linux-amd64{a} golang-src{a} 
+  javascript-common{a} libjs-jquery{a} 
