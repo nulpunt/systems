@@ -2136,3 +2136,13 @@ root@edi:/srv# a2dissite nulpunt.argure.nl
 The following NEW packages will be installed:
   golang golang-doc{a} golang-go{a} golang-go-linux-amd64{a} golang-src{a} 
   javascript-common{a} libjs-jquery{a} 
+
+root@edi:~# aptitude install subversion darcs mercurial cvs bzr       
+The following NEW packages will be installed:
+  bzr cvs darcs libffi5{a} libneon27-gnutls{a} libsvn1{a} mercurial 
+  mercurial-common{a} python-bzrlib{a} python-configobj{a} python-crypto{a} 
+  python-gpgme{a} python-httplib2{a} python-keyring{a} 
+  python-launchpadlib{a} python-lazr.restfulclient{a} python-lazr.uri{a} 
+  python-oauth{a} python-paramiko{a} python-pkg-resources{a} 
+  python-simplejson{a} python-wadllib{a} python-zope.interface{a} 
+  subversion 
