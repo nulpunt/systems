@@ -354,3 +354,19 @@ root@edi:~# a2enmod proxy_fcgi
 root@edi:~# aptitude install php-apc
 The following NEW packages will be installed:
   php-apc 
+  
+  
+2013-09-30 08:57:40 geertjohan
+------------------------------
+
+root@edi:~# aptitude install mongodb
+The following NEW packages will be installed:
+  libboost-dev{a} libboost-filesystem1.49.0{a} libboost-program-options1.49.0{a} libboost-system1.49.0{a} 
+  libboost-thread1.49.0{a} libboost1.49-dev{a} libicu48{a} mongodb mongodb-clients{a} mongodb-dev{a} mongodb-server{a} 
+                                         
+root@edi:~# aptitude install -t testing mongodb
+The following NEW packages will be installed:
+  libgoogle-perftools4{a} libsnappy1{a} libtcmalloc-minimal4{a} libunwind7{a} 
+The following packages will be upgraded:
+  mongodb mongodb-server 
+
