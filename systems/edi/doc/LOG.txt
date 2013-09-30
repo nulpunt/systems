@@ -329,3 +329,28 @@ root@edi:/etc/shorewall6# ln -s /etc/shorewall/policy policy
 root@edi:~# aptitude install fail2ban
 The following NEW packages will be installed:
   fail2ban gamin{a} libgamin0{a} python-central{a} python-gamin{a} 
+
+2013-09-30 argure
+-----------------
+
+root@edi:~# aptitude install mysql-server
+The following NEW packages will be installed:
+  libaio1{a} libdbd-mysql-perl{a} libdbi-perl{a} libhtml-template-perl{a} 
+  libnet-daemon-perl{a} libplrpc-perl{a} mysql-client-5.5{a} mysql-server 
+  mysql-server-5.5{a} mysql-server-core-5.5{a} 
+
+root@edi:~# aptitude -t testing install libapache2-mod-fcgid
+The following NEW packages will be installed:
+  libapache2-mod-fcgid 
+
+root@edi:~# aptitude install php5 php5-fpm php5-mysql
+The following NEW packages will be installed:
+  libonig2{a} libqdbm14{a} php5 php5-common{a} php5-fpm php5-mysql 
+
+root@edi:~# a2ensite nulpunt.nu
+
+root@edi:~# a2enmod proxy_fcgi
+
+root@edi:~# aptitude install php-apc
+The following NEW packages will be installed:
+  php-apc 
