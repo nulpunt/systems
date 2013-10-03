@@ -384,3 +384,9 @@ root@edi:/usr/local/src# dpkg -i apache2_2.4.6-3_amd64.deb
 root@edi:/usr/local/src# dpkg -i apache2-bin_2.4.6-3_amd64.deb
 
 root@edi:/usr/local/src# dpkg -i apache2-bin_2.4.6-3_amd64.deb
+
+root@edi:~# apt-mark hold apache2
+
+root@edi:~# apt-mark hold apache2-bin
+
+root@edi:~# apt-mark hold apache2-data
