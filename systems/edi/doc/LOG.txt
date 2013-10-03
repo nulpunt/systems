@@ -370,3 +370,11 @@ The following NEW packages will be installed:
 The following packages will be upgraded:
   mongodb mongodb-server 
 
+2013-10-03 argure
+-----------------
+
+root@edi:~# aptitude full-upgrade
+The following packages will be upgraded: 
+  apache2 gcc-4.8-base jenkins libc-dev-bin libc6 libc6-dev libgcc1 
+  libgmp10 libgmpxx4ldbl libgomp1 libitm1 libmpfr4 libpq-dev libpq5 
+  libquadmath0 libstdc++6 linux-libc-dev locales 
