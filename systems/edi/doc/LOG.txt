@@ -390,3 +390,11 @@ root@edi:~# apt-mark hold apache2
 root@edi:~# apt-mark hold apache2-bin
 
 root@edi:~# apt-mark hold apache2-data
+
+2013-10-04 16:05:45 geertjohan
+------------------------------
+
+root@edi:~# mkdir /opt/nulpunt-http-files
+
+root@edi:~# chown jenkins:root /opt/nulpunt-http-files 
+
