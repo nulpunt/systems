@@ -421,3 +421,5 @@ edi :: ~ » chmod g+w /srv/nightly.nulpunt.nu
 edi :: ~ » cd /usr/local/bin
 edi :: /usr/local/bin » touch npserver
 edi :: /usr/local/bin » chown jenkins:nulpunt npserver
+edi :: /usr/local/bin » chmod u+s
+edi :: /usr/local/bin » chmod o-x
