@@ -399,6 +399,10 @@ root@edi:~# mkdir /opt/nulpunt-http-files
 
 root@edi:~# chown jenkins:root /opt/nulpunt-http-files 
 
+2013-10-06 argure
+-----------------
+
+root@edi:~# wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
 
 2013-10-07 10:08:00 geertjohan
 ------------------------------
@@ -421,3 +425,23 @@ edi :: ~ » chmod g+w /srv/nightly.nulpunt.nu
 edi :: ~ » cd /usr/local/bin
 edi :: /usr/local/bin » touch npserver
 edi :: /usr/local/bin » chown jenkins:nulpunt npserver
+
+2013-10-07 argure
+-----------------
+
+edi :: ~ » aptitude -t testing install libgmp-dev
+The following NEW packages will be installed:
+  libgmp-dev 
+
+edi :: ~ » aptitude install libghc6-parsec2-dev
+The following NEW packages will be installed:
+  ghc{a} libbsd-dev{a} libffi-dev{a} libghc-parsec2-dev{a} 
+  libghc6-parsec2-dev 
+
+edi :: local/src/compleat ‹master› » ./Setup.lhs install
+Installing executable(s) in /usr/local/bin
+
+edi :: local/src/git-extras ‹c45e2b8› » make install
+
+edi :: local/src/gitflow ‹8bb7890› » ./install.sh
+Installing hubflow to /usr/local/bin
