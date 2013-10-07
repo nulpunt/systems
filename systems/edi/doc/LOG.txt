@@ -447,3 +447,15 @@ edi :: local/src/git-extras ‹c45e2b8› » make install
 
 edi :: local/src/gitflow ‹8bb7890› » ./install.sh
 Installing hubflow to /usr/local/bin
+
+2013-10-07 13:10:00 geertjohan
+------------------------------
+
+edi :: ~prefix/bin » nano npserver-daemon
+edi :: ~prefix/bin » chown root:nulpunt npserver-daemon 
+edi :: ~prefix/bin » chmod ug+x npserver-daemon
+edi :: ~prefix/bin » chmod u+s npserver-daemon 
+edi :: ~prefix/bin » ls -al npserver*
+-rwxrwxr-- 1 root nulpunt 6677952 Oct  7 13:05 npserver
+-rwsr-xr-- 1 root nulpunt     232 Oct  7 13:10 npserver-daemon
+
