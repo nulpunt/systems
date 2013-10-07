@@ -403,8 +403,17 @@ root@edi:~# chown jenkins:root /opt/nulpunt-http-files
 2013-10-07 10:08:00 geertjohan
 ------------------------------
 
-edi :: ~nulpunt » adduser --system nulpunt                                                                                        1 µ
-Adding system user `nulpunt' (UID 114) ...
-Adding new user `nulpunt' (UID 114) with group `nogroup' ...
-Creating home directory `/home/nulpunt' ...
+edi :: ~ » addgroup nulpunt
+Adding group `nulpunt' (GID 1000) ...
+Done.
 
+edi :: ~ » adduser --system --no-create-home --ingroup=nulpunt nulpunt
+Adding system user `nulpunt' (UID 114) ...
+Adding new user `nulpunt' (UID 114) with group `nulpunt' ...
+Not creating home directory `/home/nulpunt'.
+
+edi :: ~ » mkdir /srv/nightly.nulpunt.nu
+
+edi :: ~ » addgroup jenkins nulpunt
+
+edi :: ~ » chmod g+w /srv/nightly.nulpunt.nu
