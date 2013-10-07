@@ -461,3 +461,11 @@ edi :: ~prefix/bin » ls -al npserver*
 
 edi :: ~prefix/bin » mv npserver-daemon npserver-daemon-start
 
+# created binary with go, see repo nulpunt/npserver-daemon
+
+2013-10-07 14:33:00 geertjohan
+------------------------------
+
+edi :: /etc/apache2/sites-available » nano nightly.nulpunt.nu.conf      
+edi :: /etc/apache2/sites-available » a2enmod proxy_http                                                                        130 µ
+edi :: /etc/apache2/sites-available » service apache2 restart
