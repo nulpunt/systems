@@ -417,3 +417,7 @@ edi :: ~ » mkdir /srv/nightly.nulpunt.nu
 edi :: ~ » addgroup jenkins nulpunt
 
 edi :: ~ » chmod g+w /srv/nightly.nulpunt.nu
+
+edi :: ~ » cd /usr/local/bin
+edi :: /usr/local/bin » touch npserver
+edi :: /usr/local/bin » chown jenkins:nulpunt npserver
