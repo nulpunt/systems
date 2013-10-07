@@ -459,3 +459,5 @@ edi :: ~prefix/bin » ls -al npserver*
 -rwxrwxr-- 1 root nulpunt 6677952 Oct  7 13:05 npserver
 -rwsr-xr-- 1 root nulpunt     232 Oct  7 13:10 npserver-daemon
 
+edi :: ~prefix/bin » mv npserver-daemon npserver-daemon-start
+
