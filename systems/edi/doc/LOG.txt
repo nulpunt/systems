@@ -477,3 +477,7 @@ edi :: ~ » aptitude full-upgrade
 The following packages will be upgraded: 
   gnupg gpgv jenkins libmysqlclient-dev libmysqlclient18 manpages-dev 
   mysql-common 
+
+edi :: ~ » aptitude full-upgrade
+The following packages will be upgraded: 
+  libsystemd-login0 
