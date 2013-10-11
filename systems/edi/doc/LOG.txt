@@ -469,3 +469,11 @@ edi :: ~prefix/bin » mv npserver-daemon npserver-daemon-start
 edi :: /etc/apache2/sites-available » nano nightly.nulpunt.nu.conf      
 edi :: /etc/apache2/sites-available » a2enmod proxy_http                                                                        130 µ
 edi :: /etc/apache2/sites-available » service apache2 restart
+
+2013-10-11 argure
+-----------------
+
+edi :: ~ » aptitude full-upgrade
+The following packages will be upgraded: 
+  gnupg gpgv jenkins libmysqlclient-dev libmysqlclient18 manpages-dev 
+  mysql-common 
