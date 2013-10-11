@@ -1,0 +1,60 @@
+nulpunt/systems                                            P. Godschalk
+Policy Document: 0001                                     November 2013
+
+
+
+                         Software Installation
+
+Purpose
+
+    This document defines the policy on installation of software
+    through various purposes.
+
+
+
+General policy
+
+    1. /Never/ install non-free packages or packages which require
+       or contain non-free packages or blobs.
+    2. Always prefer using APT over compiling from source.
+
+
+
+APT
+    1. Always prefer Debian repositories over custom repositories like
+       Ubuntu Launchpad. You should not add a custom repository without
+       a good reason.
+    2. Prefer debian/wheezy (stable) over debian/jessie (testing).
+    3. Do not use debian/sid (unstable) or experimental without a very
+       good reason.
+    4. When using a repository other than debian/wheezy or
+       debian/jessie it is your responsibility to stay informed of
+       CVE's, security advisories and updates through whatever means
+       and to apply patches in a timely manner.
+    5. When using custom repositories, debian/sid or experimental, any
+       dependencies should first follow the policy of points 1 through
+       4. For instance, when installing a package from debian/sid you
+       should first look to resolve dependencies from debian/wheezy,
+       then debian/jessie, then debian/sid.
+    6. You should never use apt-get to install packages, use aptitude
+       instead.
+
+
+
+Compiling from source
+    1. When compiling a package from source, ideally use
+      `apt-get source` to get the source package, then use the dpkg
+       tools to construct a deb binary to install. For this procedure
+       the policy under APT applies.
+    2. When making changes to the source code of a package you should
+       change the version number to reflect this. The format for this
+       is `%packagename%-%originalversion%%yourusername%%revision%`,
+       e.g., for apache2: `apache2-2.4.6-3argure1`.
+    3. The source code and any deb binaries should remain in
+       `/usr/local/src`.
+    4. When compiling from source without using APT, prefer LTS over
+       current-stable; prefer current-stable over current-unstable;
+       prefer current-unstable over anything else like nightly builds
+       or GIT head.
+
+Last revision: 2013-10-11 by Argure

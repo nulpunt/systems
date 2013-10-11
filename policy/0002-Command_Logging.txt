@@ -1,0 +1,28 @@
+nulpunt/systems                                            P. Godschalk
+Policy Document: 0002                                     November 2013
+
+
+
+                            Command Logging
+
+Purpose
+
+    This document defines the policy on what commands to log and in
+    which format.
+
+
+
+General policy
+
+    1. You should log commands that change the behaviour of the system.
+       E.g., you should log when installing packages, but there is no
+       need to log every `ls` or `cd`.
+    2. Log commands in a file LOG.txt found in the `doc/` directory of
+       the system you are working on.
+    3. Prefix your commands with a header containing
+       `%date% %username%`.
+    4. Keep logging concise. For instance, when installing packages,
+       you should log which packages are changed, but there is no need
+       to log the full output of aptitude.
+
+Last revision: 2013-10-11 by Argure
