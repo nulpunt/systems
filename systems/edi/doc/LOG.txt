@@ -493,3 +493,8 @@ The following packages will be upgraded:
   perl-base perl-modules php5 php5-common php5-fpm php5-mysql python 
   python-httplib2 python-minimal subversion sysv-rc sysvinit sysvinit-utils 
   tzdata tzdata-java 
+
+edi :: ~ » aptitude install kbd
+The following NEW packages will be installed:
+  console-setup{a} console-setup-linux{a} kbd keyboard-configuration{a} 
+  xkb-data{a} 
