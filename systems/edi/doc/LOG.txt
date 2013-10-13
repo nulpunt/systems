@@ -481,3 +481,15 @@ The following packages will be upgraded:
 edi :: ~ » aptitude full-upgrade
 The following packages will be upgraded: 
   libsystemd-login0 
+
+2013-10-13 argure
+-----------------
+
+edi :: ~ » aptitude full-upgrade
+The following packages will be upgraded: 
+  base-files dmsetup dpkg dpkg-dev grub-common initscripts 
+  libapache2-mod-fcgid libcups2 libcurl3-gnutls libdevmapper1.02.1 
+  libdpkg-perl libperl5.14 libsvn1 linux-image-3.2.0-4-amd64 mutt perl 
+  perl-base perl-modules php5 php5-common php5-fpm php5-mysql python 
+  python-httplib2 python-minimal subversion sysv-rc sysvinit sysvinit-utils 
+  tzdata tzdata-java 
