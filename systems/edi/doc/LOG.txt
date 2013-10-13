@@ -422,3 +422,104 @@ edi :: ~nulpunt » chmod g+w /home/nulpunt/http-files
 edi :: /usr/local/bin » touch nulpunt
 
 edi :: /usr/local/bin » chown jenkins:nulpunt nulpunt
+
+2013-10-06 argure
+-----------------
+
+root@edi:~# wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+
+2013-10-07 10:08:00 geertjohan
+------------------------------
+
+edi :: ~ » addgroup nulpunt
+Adding group `nulpunt' (GID 1000) ...
+Done.
+
+edi :: ~ » adduser --system --no-create-home --ingroup=nulpunt nulpunt
+Adding system user `nulpunt' (UID 114) ...
+Adding new user `nulpunt' (UID 114) with group `nulpunt' ...
+Not creating home directory `/home/nulpunt'.
+
+edi :: ~ » mkdir /srv/nightly.nulpunt.nu
+
+edi :: ~ » addgroup jenkins nulpunt
+
+edi :: ~ » chmod g+w /srv/nightly.nulpunt.nu
+
+edi :: ~ » cd /usr/local/bin
+edi :: /usr/local/bin » touch npserver
+edi :: /usr/local/bin » chown jenkins:nulpunt npserver
+edi :: /usr/local/bin » chmod u+s
+edi :: /usr/local/bin » chmod o-x
+
+2013-10-07 argure
+-----------------
+
+edi :: ~ » aptitude -t testing install libgmp-dev
+The following NEW packages will be installed:
+  libgmp-dev 
+
+edi :: ~ » aptitude install libghc6-parsec2-dev
+The following NEW packages will be installed:
+  ghc{a} libbsd-dev{a} libffi-dev{a} libghc-parsec2-dev{a} 
+  libghc6-parsec2-dev 
+
+edi :: local/src/compleat ‹master› » ./Setup.lhs install
+Installing executable(s) in /usr/local/bin
+
+edi :: local/src/git-extras ‹c45e2b8› » make install
+
+edi :: local/src/gitflow ‹8bb7890› » ./install.sh
+Installing hubflow to /usr/local/bin
+
+2013-10-07 13:10:00 geertjohan
+------------------------------
+
+edi :: ~prefix/bin » nano npserver-daemon
+edi :: ~prefix/bin » chown root:nulpunt npserver-daemon 
+edi :: ~prefix/bin » chmod ug+x npserver-daemon
+edi :: ~prefix/bin » chmod u+s npserver-daemon 
+edi :: ~prefix/bin » ls -al npserver*
+-rwxrwxr-- 1 root nulpunt 6677952 Oct  7 13:05 npserver
+-rwsr-xr-- 1 root nulpunt     232 Oct  7 13:10 npserver-daemon
+
+edi :: ~prefix/bin » mv npserver-daemon npserver-daemon-start
+
+# created binary with go, see repo nulpunt/npserver-daemon
+
+2013-10-07 14:33:00 geertjohan
+------------------------------
+
+edi :: /etc/apache2/sites-available » nano nightly.nulpunt.nu.conf      
+edi :: /etc/apache2/sites-available » a2enmod proxy_http                                                                        130 µ
+edi :: /etc/apache2/sites-available » service apache2 restart
+
+2013-10-11 argure
+-----------------
+
+edi :: ~ » aptitude full-upgrade
+The following packages will be upgraded: 
+  gnupg gpgv jenkins libmysqlclient-dev libmysqlclient18 manpages-dev 
+  mysql-common 
+
+edi :: ~ » aptitude full-upgrade
+The following packages will be upgraded: 
+  libsystemd-login0 
+
+2013-10-13 argure
+-----------------
+
+edi :: ~ » aptitude full-upgrade
+The following packages will be upgraded: 
+  base-files dmsetup dpkg dpkg-dev grub-common initscripts 
+  libapache2-mod-fcgid libcups2 libcurl3-gnutls libdevmapper1.02.1 
+  libdpkg-perl libperl5.14 libsvn1 linux-image-3.2.0-4-amd64 mutt perl 
+  perl-base perl-modules php5 php5-common php5-fpm php5-mysql python 
+  python-httplib2 python-minimal subversion sysv-rc sysvinit sysvinit-utils 
+  tzdata tzdata-java 
+
+edi :: ~ » aptitude install kbd
+The following NEW packages will be installed:
+  console-setup{a} console-setup-linux{a} kbd keyboard-configuration{a} 
+  xkb-data{a} 
+
