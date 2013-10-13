@@ -391,6 +391,7 @@ root@edi:~# apt-mark hold apache2-bin
 
 root@edi:~# apt-mark hold apache2-data
 
+
 2013-10-04 16:05:45 geertjohan
 ------------------------------
 
@@ -398,3 +399,26 @@ root@edi:~# mkdir /opt/nulpunt-http-files
 
 root@edi:~# chown jenkins:root /opt/nulpunt-http-files 
 
+
+2013-10-06 21:42:00 geertjohan
+------------------------------
+
+edi :: ~ » adduser --system nulpunt
+
+edi :: ~nulpunt » addgroup nulpunt 
+
+edi :: ~nulpunt » addgroup nulpunt nulpunt
+
+edi :: ~nulpunt » addgroup jenkins nulpunt
+
+edi :: ~nulpunt » chown nulpunt:nulpunt /home/nulpunt
+
+edi :: ~nulpunt » chwon nulpunt:nulpunt /home/nulpunt/http-files
+
+edi :: ~nulpunt » chmod g+w /home/nulpunt
+
+edi :: ~nulpunt » chmod g+w /home/nulpunt/http-files
+
+edi :: /usr/local/bin » touch nulpunt
+
+edi :: /usr/local/bin » chown jenkins:nulpunt nulpunt
