@@ -523,3 +523,9 @@ The following NEW packages will be installed:
   console-setup{a} console-setup-linux{a} kbd keyboard-configuration{a} 
   xkb-data{a} 
 
+2013-10-20 argure
+-----------------
+
+edi :: ~ » aptitude full-upgrade
+The following packages will be upgraded: 
+  jenkins libx11-6 libxml2 libxml2-dev python-crypto 
