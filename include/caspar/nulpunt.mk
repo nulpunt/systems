@@ -46,7 +46,7 @@ sudo-reload = ssh $1 "chmod 440 /etc/sudoers /etc/sudoers.d/*; visudo -c"
 		ssh $$suh "a2enconf $*;  cd / && env - /usr/sbin/apache2ctl configtest && service apache2 reload" ; \
 	done
 
-%-a2disconf
+%-a2disconf:
 	for suh in ($csp_UHOSTS); do \
 		ssh $$suh "a2disconf $*;  cd / && env - /usr/sbin/apache2ctl configtest && service apache2 reload" ; \
 	done
@@ -56,7 +56,7 @@ sudo-reload = ssh $1 "chmod 440 /etc/sudoers /etc/sudoers.d/*; visudo -c"
 		ssh $$suh "a2enmod $*;  cd / && env - /usr/sbin/apache2ctl configtest && service apache2 restart" ; \
 	done
 
-%-a2dismod
+%-a2dismod:
 	for suh in ($csp_UHOSTS); do \
 		ssh $$suh "a2dismod $*;  cd / && env - /usr/sbin/apache2ctl configtest && service apache2 restart" ; \
 	done
@@ -66,7 +66,7 @@ sudo-reload = ssh $1 "chmod 440 /etc/sudoers /etc/sudoers.d/*; visudo -c"
 		ssh $$suh "a2ensite $*;  cd / && env - /usr/sbin/apache2ctl configtest && service apache2 reload" ; \
 	done
 
-%-a2dissite
+%-a2dissite:
 	for suh in ($csp_UHOSTS); do \
 		ssh $$suh "a2dissite $*;  cd / && env - /usr/sbin/apache2ctl configtest && service apache2 reload" ; \
 	done
