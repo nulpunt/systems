@@ -529,3 +529,10 @@ The following NEW packages will be installed:
 edi :: ~ » aptitude full-upgrade
 The following packages will be upgraded: 
   jenkins libx11-6 libxml2 libxml2-dev python-crypto 
+
+2013-10-21 argure
+-----------------
+
+edi :: ~ » aptitude full-upgrade
+The following packages will be upgraded: 
+  libpq-dev libpq5
