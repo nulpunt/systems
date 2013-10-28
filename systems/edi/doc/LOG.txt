@@ -536,3 +536,10 @@ The following packages will be upgraded:
 edi :: ~ » aptitude full-upgrade
 The following packages will be upgraded: 
   libpq-dev libpq5
+
+2013-10-28 argure
+-----------------
+
+edi :: ~ » aptitude full-upgrade
+The following packages will be upgraded: 
+  jenkins libicu48 
