@@ -580,3 +580,9 @@ The following packages will be upgraded:
   initramfs-tools libasprintf0c2 libgeoip1 libgettextpo0 libgpgme11 
   libmagic1 libxapian22 linux-image-amd64 mercurial mercurial-common 
   openssh-client openssh-server python-debian rsyslog 
+
+edi :: ~prefix/src » dpkg -i apache2_2.4.6-3_amd64.deb 
+
+edi :: ~prefix/src » dpkg -i apache2.2-bin_2.4.6-3_amd64.deb 
+
+edi :: ~prefix/src » dpkg -i apache2-data_2.4.6-3_all.deb
