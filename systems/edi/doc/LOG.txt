@@ -543,3 +543,14 @@ The following packages will be upgraded:
 edi :: ~ » aptitude full-upgrade
 The following packages will be upgraded: 
   jenkins libicu48 
+
+2013-10-30 argure
+-----------------
+
+edi :: ~prefix/src/node-v0.10.21 » aptitude install checkinstall
+The following NEW packages will be installed:
+  checkinstall 
+
+edi :: ~prefix/src/node-v0.10.21 » dpkg -i node_0.10.21-1_amd64.deb
+
+edi :: /opt/etherpad-lite ‹8fffe47*› » npm install sqlite3
