@@ -1,0 +1,11 @@
+Package: *
+Pin: release o=Debian,a=wheezy-backports
+Pin-Priority: 900
+
+Package: *
+Pin: release o=Debian,a=stable
+Pin-Priority: 800
+
+Package: *
+Pin: release o=Debian,a=testing
+Pin-Priority: -1

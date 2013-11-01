@@ -554,3 +554,29 @@ The following NEW packages will be installed:
 edi :: ~prefix/src/node-v0.10.21 » dpkg -i node_0.10.21-1_amd64.deb
 
 edi :: /opt/etherpad-lite ‹8fffe47*› » npm install sqlite3
+
+2013-11-01 argure
+-----------------
+
+edi :: ~ » aptitude -t testing install binutils
+The following packages will be upgraded: 
+  binutils 
+
+edi :: ~ » aptitude -t wheezy-backports full-upgrade
+The following NEW packages will be installed:
+  firmware-linux-free{a} fontconfig{a} gnupg-agent{a} gnupg2{a} 
+  hicolor-icon-theme{a} init-system-helpers{a} libasprintf-dev{a} 
+  libassuan0{a} libatk1.0-0{a} libatk1.0-data{a} libcairo2{a} libdatrie1{a} 
+  libee0{a} libestr0{a} libgdk-pixbuf2.0-0{a} libgdk-pixbuf2.0-common{a} 
+  libgettextpo-dev{a} libgtk2.0-0{a} libgtk2.0-bin{a} libgtk2.0-common{a} 
+  libjasper1{a} libjbig0 libjson0{a} libksba8{a} liblognorm0{a} 
+  libpango1.0-0{a} libpixman-1-0{a} libpng12-0{a} libthai-data{a} 
+  libthai0{a} libtiff4{a} libxcb-render0{a} libxcb-shm0{a} 
+  libxcomposite1{a} libxcursor1{a} libxdamage1{a} libxfixes3{a} libxft2{a} 
+  libxi6{a} libxinerama1{a} libxrandr2{a} libxrender1{a} 
+  linux-image-3.10-0.bpo.3-amd64{a} pinentry-gtk2{a} python-six{a} 
+The following packages will be upgraded:
+  autopoint file geoip-database gettext gettext-base git git-core git-man 
+  initramfs-tools libasprintf0c2 libgeoip1 libgettextpo0 libgpgme11 
+  libmagic1 libxapian22 linux-image-amd64 mercurial mercurial-common 
+  openssh-client openssh-server python-debian rsyslog 

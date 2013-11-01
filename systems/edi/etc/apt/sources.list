@@ -21,3 +21,7 @@ deb-src http://security.debian.org/ jessie/updates main
 
 # jenkins
 deb http://pkg.jenkins-ci.org/debian binary/
+
+# wheezy-backports
+deb http://ftp.debian.org/debian/ wheezy-backports main
+deb-src http://ftp.debian.org/debian/ wheezy-backports main
