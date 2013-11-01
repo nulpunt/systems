@@ -586,3 +586,7 @@ edi :: ~prefix/src » dpkg -i apache2_2.4.6-3_amd64.deb
 edi :: ~prefix/src » dpkg -i apache2.2-bin_2.4.6-3_amd64.deb 
 
 edi :: ~prefix/src » dpkg -i apache2-data_2.4.6-3_all.deb
+
+edi :: ~ » aptitude install tcpdump                                                                                                   127 ↵
+The following NEW packages will be installed:
+  libpcap0.8{a} tcpdump
