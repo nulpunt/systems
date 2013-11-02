@@ -1,16 +1,4 @@
 #
-# Shorewall version 4 - Interfaces File
-#
-# For information about entries in this file, type "man shorewall-interfaces"
-#
-# The manpage is also online at
-# http://www.shorewall.net/manpages/shorewall-interfaces.html
-#
-###############################################################################
-#ZONE	INTERFACE	BROADCAST	OPTIONS
-net	eth0		detect		dhcp,tcpflags
-root@geonosis:/etc/shorewall# cat params
-#
 # Shorewall version 4 - Params File
 #
 # /etc/shorewall/params
@@ -36,5 +24,7 @@ root@geonosis:/etc/shorewall# cat params
 #		net	eth0		130.252.100.255	routefilter,norfc1918
 #
 ###############################################################################
+
+GEONOSIS=net:92.63.168.76
 
 #LAST LINE -- DO NOT REMOVE

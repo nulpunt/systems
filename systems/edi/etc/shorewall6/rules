@@ -26,3 +26,6 @@ ACCEPT		net		fw		tcp	443
 
 # IMAP
 ACCEPT		net		fw		tcp	143
+
+# Nagios/NRPE
+ACCEPT		$GEONOSIS	all		tcp	5666

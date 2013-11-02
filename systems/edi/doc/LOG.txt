@@ -597,3 +597,14 @@ The following NEW packages will be installed:
 edi :: ~ » aptitude full-upgrade
 The following packages will be upgraded: 
   libnss3 
+
+edi :: /etc/init.d » aptitude install nagios-nrpe-server                                                                                1 ↵
+The following NEW packages will be installed:
+  fping{a} freeipmi-common{a} freeipmi-tools{a} libclass-accessor-perl{a} libconfig-tiny-perl{a} libdate-manip-perl{a} libfreeipmi12{a} 
+  libio-pty-perl{a} libipc-run-perl{a} libipmiconsole2{a} libipmidetect0{a} liblwp-useragent-determined-perl{a} 
+  libmail-imapclient-perl{a} libmath-calc-units-perl{a} libmemcached10{a} libmodule-implementation-perl{a} libmodule-runtime-perl{a} 
+  libnagios-plugin-perl{a} libnet-smtp-tls-perl{a} libnet-snmp-perl{a} libparams-classify-perl{a} libparams-validate-perl{a} 
+  libparse-recdescent-perl{a} libradiusclient-ng2{a} libreadonly-perl{a} libreadonly-xs-perl{a} libruby1.9.1{a} libsensors4{a} 
+  libsnmp-base{a} libsnmp15{a} libsub-name-perl{a} libtalloc2{a} libtdb1{a} libtry-tiny-perl{a} libwbclient0{a} libyaml-0-2{a} 
+  libyaml-syck-perl{a} nagios-nrpe-server nagios-plugins{a} nagios-plugins-basic{a} nagios-plugins-common{a} nagios-plugins-contrib{a} 
+  nagios-plugins-standard{a} qstat{a} ruby{a} ruby1.9.1{a} samba-common{a} samba-common-bin{a} smbclient{a} snmp{a}
