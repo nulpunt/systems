@@ -608,3 +608,10 @@ The following NEW packages will be installed:
   libsnmp-base{a} libsnmp15{a} libsub-name-perl{a} libtalloc2{a} libtdb1{a} libtry-tiny-perl{a} libwbclient0{a} libyaml-0-2{a} 
   libyaml-syck-perl{a} nagios-nrpe-server nagios-plugins{a} nagios-plugins-basic{a} nagios-plugins-common{a} nagios-plugins-contrib{a} 
   nagios-plugins-standard{a} qstat{a} ruby{a} ruby1.9.1{a} samba-common{a} samba-common-bin{a} smbclient{a} snmp{a}
+
+2013-11-07 argure
+-----------------
+
+edi :: ~ » aptitude full-upgrade
+The following packages will be upgraded: 
+  init-system-helpers jenkins
