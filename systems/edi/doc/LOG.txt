@@ -615,3 +615,10 @@ The following NEW packages will be installed:
 edi :: ~ » aptitude full-upgrade
 The following packages will be upgraded: 
   init-system-helpers jenkins
+
+2013-11-08 argure
+-----------------
+
+edi :: /var/run » aptitude full-upgrade
+The following partially installed packages will be configured:
+  jenkins 
