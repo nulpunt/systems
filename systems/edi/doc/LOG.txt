@@ -622,3 +622,17 @@ The following packages will be upgraded:
 edi :: /var/run » aptitude full-upgrade
 The following partially installed packages will be configured:
   jenkins 
+
+edi :: /var/run » aptitude -t wheezy-backports full-upgrade                 1 ↵
+The following NEW packages will be installed:
+  libcrypt-openssl-bignum-perl{a} libcrypt-openssl-dsa-perl{a} 
+  libcrypt-openssl-rsa-perl{a} libcrypt-ssleay-perl{a} libdbi1{a} 
+  libdigest-bubblebabble-perl{a} libjson-c2{a} libmime-base32-perl{a} 
+  libnet-dns-sec-perl{a} libtevent0{a} libvarnishapi1{a} 
+  libwebinject-perl{a} libxml-namespacesupport-perl{a} 
+  libxml-parser-perl{a} libxml-sax-base-perl{a} libxml-sax-expat-perl{a} 
+  libxml-sax-perl{a} libxml-simple-perl{a} 
+The following packages will be upgraded:
+  libjson0 libwbclient0 nagios-plugins nagios-plugins-basic 
+  nagios-plugins-common nagios-plugins-contrib nagios-plugins-standard 
+  samba-common samba-common-bin smbclient 
