@@ -1610,7 +1610,7 @@ remote_smtp:
   driver = smtp
   dkim_domain = nulpunt.nu
   dkim_selector = x
-  dkim_private_key = cba8cb06.key
+  dkim_private_key = /etc/exim4/cba8cb06.key
   dkim_canon = relaxed
 .ifdef REMOTE_SMTP_HOSTS_AVOID_TLS
   hosts_avoid_tls = REMOTE_SMTP_HOSTS_AVOID_TLS
