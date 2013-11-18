@@ -636,3 +636,10 @@ The following packages will be upgraded:
   libjson0 libwbclient0 nagios-plugins nagios-plugins-basic 
   nagios-plugins-common nagios-plugins-contrib nagios-plugins-standard 
   samba-common samba-common-bin smbclient 
+
+2013-11-18 argure
+-----------------
+
+edi :: ~ » aptitude full-upgrade
+The following packages will be upgraded: 
+  curl jenkins libcurl3 libcurl3-gnutls openssh-client openssh-server 

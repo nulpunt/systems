@@ -86,5 +86,4 @@ Subsystem sftp /usr/lib/openssh/sftp-server
 # and ChallengeResponseAuthentication to 'no'.
 UsePAM yes
 
-# Disable AES-GCM
-Ciphers aes256-ctr,aes256-cbc,aes192-ctr,aes192-cbc,aes128-ctr,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc
+Ciphers aes256-gcm,aes256-ctr,aes256-cbc,aes192-gcm,aes192-ctr,aes192-cbc,aes128-gcm,aes128-ctr,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc
