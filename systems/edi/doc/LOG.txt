@@ -643,3 +643,10 @@ The following packages will be upgraded:
 edi :: ~ » aptitude full-upgrade
 The following packages will be upgraded: 
   curl jenkins libcurl3 libcurl3-gnutls openssh-client openssh-server 
+
+2013-11-24 argure
+-----------------
+
+edi :: ~ » aptitude update && aptitude full-upgrade -y
+The following packages will be upgraded: 
+  curl libcurl3 libcurl3-gnutls
