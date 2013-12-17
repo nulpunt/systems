@@ -665,3 +665,14 @@ The following extra packages will be installed:
 The following NEW packages will be installed:
   libgif4 liblept3 libleptonica-dev libwebp2
 
+2013-12-17 argure
+-----------------
+
+edi :: ~ » aptitude -t stable full-upgrade
+The following NEW packages will be installed:
+  linux-image-3.11-0.bpo.2-amd64{a} 
+The following packages will be upgraded:
+  apt apt-utils base-files git git-core git-man jenkins libapt-inst1.5 
+  libapt-pkg4.12 libnspr4 libruby1.9.1 libvarnishapi1 linux-image-amd64 
+  mysql-client-5.5 mysql-server mysql-server-5.5 mysql-server-core-5.5 php5 
+  php5-common php5-fpm php5-mysql ruby1.9.1 tzdata tzdata-java
