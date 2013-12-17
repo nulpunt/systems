@@ -683,3 +683,9 @@ Configuration file `/etc/php5/fpm/pool.d/www.conf'
 edi :: ~ » aptitude -t wheezy-backports full-upgrade
 The following packages will be upgraded: 
   libusb-1.0-0 
+
+root@edi:/usr/local/src# dpkg -i apache2_2.4.6-3_amd64.deb
+
+root@edi:/usr/local/src# dpkg -i apache2-bin_2.4.6-3_amd64.deb
+
+root@edi:/usr/local/src# dpkg -i apache2-bin_2.4.6-3_amd64.deb
