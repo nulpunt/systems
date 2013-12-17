@@ -689,3 +689,15 @@ root@edi:/usr/local/src# dpkg -i apache2_2.4.6-3_amd64.deb
 root@edi:/usr/local/src# dpkg -i apache2-bin_2.4.6-3_amd64.deb
 
 root@edi:/usr/local/src# dpkg -i apache2-bin_2.4.6-3_amd64.deb
+
+/* 
+ * START BIOS CHANGE
+ * Advanced {
+ * 	IPMI {
+ * 		Clear System Event Log {
+ * 			// Set from 0 to 1
+ * 		};
+ * 	};
+ * };
+ * END BIOS CHANGE
+ */
