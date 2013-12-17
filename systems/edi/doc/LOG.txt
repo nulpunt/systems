@@ -679,3 +679,7 @@ The following packages will be upgraded:
 
 Configuration file `/etc/php5/fpm/pool.d/www.conf'
 *** www.conf (Y/I/N/O/D/Z) [default=N] ? n
+
+edi :: ~ » aptitude -t wheezy-backports full-upgrade
+The following packages will be upgraded: 
+  libusb-1.0-0 
