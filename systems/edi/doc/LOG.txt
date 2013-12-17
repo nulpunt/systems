@@ -656,3 +656,10 @@ The following packages will be upgraded:
 edi :: ~ » aptitude full-upgrade
 The following packages will be upgraded: 
   jenkins libnss3 linux-libc-dev 
+
+2013-12-17 geertjohan
+edi :: ~ » apt-get install libleptonica-dev
+The following extra packages will be installed:
+  libgif4 liblept3 libwebp2
+The following NEW packages will be installed:
+  libgif4 liblept3 libleptonica-dev libwebp2
