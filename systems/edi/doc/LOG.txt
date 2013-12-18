@@ -701,18 +701,7 @@ root@edi:/usr/local/src# dpkg -i apache2-bin_2.4.6-3_amd64.deb
  * };
  * END BIOS CHANGE
  */
-<<<<<<< HEAD
 
-2013-12-18 argure
------------------
-
-root@edi:/usr/local/src# dpkg -i apache2_2.4.6-3_amd64.deb
-
-root@edi:/usr/local/src# dpkg -i apache2-bin_2.4.6-3_amd64.deb
-
-root@edi:/usr/local/src# dpkg -i apache2-bin_2.4.6-3_amd64.deb
-=======
- 
 2013-12-18 geertjohan
 -----------------
 edi :: ~ » aptitude install libtesseract3 libtesseract-dev tesseract-ocr-nld                                                    127 ↵
@@ -728,4 +717,12 @@ The following packages will be REMOVED:
 edi :: ~ » aptitude install -t testing libtesseract3 libtesseract-dev tesseract-ocr-nld
 The following NEW packages will be installed:
   libtesseract-dev libtesseract3 tesseract-ocr-nld
->>>>>>> 1f70e267ac1499b7ca8d28d491d406268062bbf5
+
+2013-12-18 argure
+-----------------
+
+root@edi:/usr/local/src# dpkg -i apache2_2.4.6-3_amd64.deb
+
+root@edi:/usr/local/src# dpkg -i apache2-bin_2.4.6-3_amd64.deb
+
+root@edi:/usr/local/src# dpkg -i apache2-bin_2.4.6-3_amd64.deb
