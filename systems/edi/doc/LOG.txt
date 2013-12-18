@@ -701,3 +701,12 @@ root@edi:/usr/local/src# dpkg -i apache2-bin_2.4.6-3_amd64.deb
  * };
  * END BIOS CHANGE
  */
+
+2013-12-18 argure
+-----------------
+
+root@edi:/usr/local/src# dpkg -i apache2_2.4.6-3_amd64.deb
+
+root@edi:/usr/local/src# dpkg -i apache2-bin_2.4.6-3_amd64.deb
+
+root@edi:/usr/local/src# dpkg -i apache2-bin_2.4.6-3_amd64.deb
