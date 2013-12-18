@@ -707,3 +707,13 @@ root@edi:/usr/local/src# dpkg -i apache2-bin_2.4.6-3_amd64.deb
 edi :: ~ » aptitude install libtesseract3 libtesseract-dev tesseract-ocr-nld                                                    127 ↵
 The following NEW packages will be installed:
   libtesseract-dev libtesseract3 tesseract-ocr-nld
+
+/* derp, need package from testing */
+
+edi :: ~ » aptitude remove --purge libtesseract3 libtesseract-dev tesseract-ocr-nld
+The following packages will be REMOVED:  
+  libtesseract-dev libtesseract3 tesseract-ocr-nld 
+
+edi :: ~ » aptitude install -t testing libtesseract3 libtesseract-dev tesseract-ocr-nld
+The following NEW packages will be installed:
+  libtesseract-dev libtesseract3 tesseract-ocr-nld
