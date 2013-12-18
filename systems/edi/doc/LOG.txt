@@ -701,3 +701,9 @@ root@edi:/usr/local/src# dpkg -i apache2-bin_2.4.6-3_amd64.deb
  * };
  * END BIOS CHANGE
  */
+ 
+2013-12-18 geertjohan
+-----------------
+edi :: ~ » aptitude install libtesseract3 libtesseract-dev tesseract-ocr-nld                                                    127 ↵
+The following NEW packages will be installed:
+  libtesseract-dev libtesseract3 tesseract-ocr-nld
