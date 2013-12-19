@@ -726,3 +726,12 @@ root@edi:/usr/local/src# dpkg -i apache2_2.4.6-3_amd64.deb
 root@edi:/usr/local/src# dpkg -i apache2-bin_2.4.6-3_amd64.deb
 
 root@edi:/usr/local/src# dpkg -i apache2-bin_2.4.6-3_amd64.deb
+
+2013-12-19 argure
+-----------------
+
+edi :: ~ » aptitude full-upgrade
+The following packages will be upgraded: 
+  gnupg gpgv initramfs-tools libpixman-1-0 
+The following packages are RECOMMENDED but will NOT be installed:
+  gnupg-curl 
