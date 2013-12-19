@@ -1,0 +1,31 @@
+nulpunt/systems                                            P. Godschalk
+Policy Document: 0003                                     December 2013
+
+
+
+                            Date and Time
+
+Purpose
+
+    This document defines the policy on which date and time notation to
+    use in documentation, configuration and code.
+
+
+
+General policy
+
+    1. You SHOULD use the ISO 8601 "Data elements and interchange
+       formats - Information Exchange - Representation of dates and
+       times" as a reference.
+    2. Full date and time notation SHOULD be in the syntax of:
+       %Y-%m-%dT%l:%M:%S%z
+    3. Date-only notation SHOULD include the year and be in the syntax
+       of: %Y-%m-%d
+    4. Time-only notation SHOULD include (at least) the hour, minutes
+       and seconds and MAY include the timezone and be in the syntax
+       of: %l:%M:%S or %l:%M:%S%z
+    5. Time relative to epoch (e.g., "x minutes ago") is optional and
+       MAY be the default in addition to the ISO 8601 notation. It MUST
+       NOT replace the ISO 8601 notation.
+
+Last revision: 2013-12-19 by Argure
