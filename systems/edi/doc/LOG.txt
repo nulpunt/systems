@@ -748,3 +748,6 @@ edi :: ~ » aptitude install -t testing golang
 The following NEW packages will be installed:
   golang golang-doc{a} golang-go{a} golang-go-linux-amd64{a} golang-go.tools{a} golang-src{a} 
 
+edi :: ~ » aptitude install byobu
+The following NEW packages will be installed:
+  byobu python-newt{a} screen{a} tmux{a} 
