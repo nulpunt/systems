@@ -751,3 +751,13 @@ The following NEW packages will be installed:
 edi :: ~ » aptitude install byobu
 The following NEW packages will be installed:
   byobu python-newt{a} screen{a} tmux{a} 
+
+
+2013-12-21 geertjohan
+-----------------
+
+edi :: ~ » aptitude install poppler-utils 
+The following NEW packages will be installed:
+  fonts-droid{a} ghostscript{a} gsfonts{a} libcupsimage2{a} libgs9{a} libgs9-common{a} libijs-0.35{a} 
+  libjbig2dec0{a} liblcms1{a} libopenjpeg2{a} libpaper-utils{a} libpaper1{a} libpoppler19{a} poppler-data{a} 
+  poppler-utils
