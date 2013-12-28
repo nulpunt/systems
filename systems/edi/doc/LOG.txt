@@ -735,3 +735,31 @@ The following packages will be upgraded:
   gnupg gpgv initramfs-tools libpixman-1-0 
 The following packages are RECOMMENDED but will NOT be installed:
   gnupg-curl 
+
+
+2013-12-20 geertjohan
+-----------------
+
+edi :: ~ » aptitude remove golang
+The following packages will be REMOVED:  
+  golang golang-doc{u} golang-go{u} golang-go-linux-amd64{u} golang-src{u} 
+
+edi :: ~ » aptitude install -t testing golang
+The following NEW packages will be installed:
+  golang golang-doc{a} golang-go{a} golang-go-linux-amd64{a} golang-go.tools{a} golang-src{a} 
+
+edi :: ~ » aptitude install byobu
+The following NEW packages will be installed:
+  byobu python-newt{a} screen{a} tmux{a} 
+
+
+2013-12-21 geertjohan
+-----------------
+
+edi :: ~ » aptitude install poppler-utils 
+The following NEW packages will be installed:
+  fonts-droid{a} ghostscript{a} gsfonts{a} libcupsimage2{a} libgs9{a} libgs9-common{a} libijs-0.35{a} 
+  libjbig2dec0{a} liblcms1{a} libopenjpeg2{a} libpaper-utils{a} libpaper1{a} libpoppler19{a} poppler-data{a} 
+  poppler-utils
+
+edi :: ~ » mv /usr/local/bin/npserver-daemon /usr/local/bin/npdaemonize
