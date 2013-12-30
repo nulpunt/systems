@@ -763,3 +763,11 @@ The following NEW packages will be installed:
   poppler-utils
 
 edi :: ~ » mv /usr/local/bin/npserver-daemon /usr/local/bin/npdaemonize
+
+2013-12-30 argure
+-----------------
+
+edi :: ~ » aptitude full-upgrade
+The following packages will be upgraded: 
+  curl libcurl3 libcurl3-gnutls libestr0 libxapian22 
+  linux-image-3.11-0.bpo.2-amd64 linux-libc-dev 
