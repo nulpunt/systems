@@ -13,8 +13,9 @@ noc: root
 security: root
 root: sysadmins
 clamav: root
-contact: management
+contact: renee
 info: management
+admin: renee
 
 argure: argure@argure.nl
 geertjohan: gjr19912@gmail.com
@@ -23,9 +24,8 @@ vinca: vinca@metahaven.net
 daniel: daniel@metahaven.net
 renee: renee@jonasstaal.nl
 younes: younes@jonasstaal.nl
-nima: nima.mz@gmail.com
 daniel.hesselbein: daniel.hesselbein@gmail.com
 sasha.ojeda: sasha.ojeda@gmail.com
 
-sysadmins: argure,geertjohan
 management: jonas,vinca,daniel,renee,younes,daniel.hesselbein,sasha.ojeda
+sysadmins: argure,geertjohan
