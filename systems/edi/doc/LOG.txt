@@ -771,3 +771,7 @@ edi :: ~ » aptitude full-upgrade
 The following packages will be upgraded: 
   curl libcurl3 libcurl3-gnutls libestr0 libxapian22 
   linux-image-3.11-0.bpo.2-amd64 linux-libc-dev 
+
+edi :: ~ » aptitude -t wheezy-backports full-upgrade
+The following packages will be upgraded: 
+  tmux 
