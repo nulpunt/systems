@@ -14,7 +14,7 @@ security: root
 root: sysadmins
 clamav: root
 contact: renee
-info: management
+info: renee
 admin: renee
 
 argure: argure@argure.nl
