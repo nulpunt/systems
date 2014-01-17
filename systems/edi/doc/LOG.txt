@@ -775,3 +775,49 @@ The following packages will be upgraded:
 edi :: ~ » aptitude -t wheezy-backports full-upgrade
 The following packages will be upgraded: 
   tmux 
+
+2014-01-17 argure
+-----------------
+
+The following NEW packages will be installed:
+  fonts-dejavu-core{a} libasn1-8-heimdal{a} libcupsfilters1{a} 
+  libgssapi3-heimdal{a} libhcrypto4-heimdal{a} libhdb9-heimdal{a} 
+  libheimbase1-heimdal{a} libheimntlm0-heimdal{a} libhx509-5-heimdal{a} 
+  libkrb5-26-heimdal{a} libldb1{a} libntdb1{a} libpython2.7{a} 
+  libpython2.7-minimal{a} libpython2.7-stdlib{a} libroken18-heimdal{a} 
+  libsmbclient libtiff5{a} libwind0-heimdal{a} python-ldb{a} 
+  python-samba{a} python-talloc{a} python-tdb{a} samba-libs{a} 
+The following packages will be REMOVED:
+  ttf-dejavu-core{u} 
+The following packages will be upgraded:
+  fontconfig-config ghostscript libcups2 libcupsimage2 libfontconfig1 
+  libgs9 libgs9-common libtdb1 libwbclient0 python2.7 python2.7-minimal 
+  samba-common samba-common-bin smbclient 
+
+edi :: ~ » aptitude full-upgrade
+The following NEW packages will be installed:
+  libdrm-intel1{a} libdrm-nouveau1a{a} libdrm-radeon1{a} libdrm2{a} 
+  libfontenc1{a} libgl1-mesa-dri{a} libgl1-mesa-glx{a} libglapi-mesa{a} 
+  libice6{a} libpciaccess0{a} libsm6{a} libutempter0{a} libv8-3.14.5{a} 
+  libx11-xcb1{a} libxaw7{a} libxcb-glx0{a} libxcb-shape0{a} libxmu6{a} 
+  libxpm4{a} libxt6{a} libxtst6{a} libxv1{a} libxxf86dga1{a} libxxf86vm1{a} 
+  tcl8.4{a} tk8.4{a} x11-common{a} x11-utils{a} xbitmaps{a} xterm{a} 
+The following packages will be upgraded:
+  git git-core git-man jenkins linux-libc-dev mercurial mercurial-common 
+  mongodb mongodb-server openssl 
+
+edi :: ~ » aptitude -t wheezy-backports full-upgrade
+The following packages will be upgraded: 
+  libtalloc2 libtevent0 mongodb-clients mongodb-dev 
+
+/*
+ * START BIOS CHANGE
+ * Advanced {
+ *      IPMI {
+ *              Clear System Event Log {
+ *                      // Set from 0 to 1
+ *              };
+ *      };
+ * };
+ * END BIOS CHANGE
+ */
