@@ -1,0 +1,777 @@
+edi
+===
+
+2013-09-17 argure
+-----------------
+
+root@snowden:~# aptitude update
+Current status: 1 update [+1], 4497 new [+4497].
+
+root@snowden:~# aptitude full-upgrade
+The following packages will be upgraded: 
+  tzdata 
+
+root@snowden:~# aptitude -t testing install apache2
+The following NEW packages will be installed:
+  apache2 apache2-bin{a} apache2-data{a} libapr1{a} libaprutil1{a} 
+  libaprutil1-dbd-sqlite3{a} libaprutil1-ldap{a} liblua5.1-0{a} ssl-cert{a} 
+The following packages will be upgraded:
+  libc6 locales 
+
+root@snowden:~# aptitude -t testing install libc6-dev
+The following NEW packages will be installed:
+  binutils{a} cpp{a} cpp-4.7{a} gcc{a} gcc-4.7{a} gcc-4.8-base{a} 
+  libc-dev-bin{a} libc6-dev libcloog-ppl1{a} libgcc-4.7-dev{a} libgmp10{a} 
+  libgmpxx4ldbl{a} libgomp1{a} libitm1{a} libmpc3{a} libmpfr4{a} 
+  libppl-c4{a} libppl12{a} libquadmath0{a} linux-libc-dev{a} 
+  manpages-dev{a} 
+The following packages will be upgraded:
+  gcc-4.7-base libgcc1 libstdc++6 
+
+root@snowden:~# aptitude -t testing install g++-4.7
+The following NEW packages will be installed:
+  g++-4.7 libstdc++6-4.7-dev{a} 
+
+root@snowden:~# aptitude install dpkg-dev
+The following NEW packages will be installed:
+  build-essential{a} dpkg-dev fakeroot{a} g++{a} libalgorithm-diff-perl{a} 
+  libalgorithm-diff-xs-perl{a} libalgorithm-merge-perl{a} libdpkg-perl{a} 
+  libfile-fcntllock-perl{a} libtimedate-perl{a} make{a} 
+
+root@snowden:/usr/local/src/apache2-2.4.6# aptitude -t testing install \
+> libapr1-dev libaprutil1-dev liblua5.1-0-dev libncurses5 libncursesw5
+The following NEW packages will be installed:
+  autotools-dev{a} comerr-dev{a} krb5-multidev{a} libapr1-dev 
+  libaprutil1-dev libexpat1-dev{a} libffi6{a} libglib2.0-0{a} 
+  libglib2.0-data{a} libgssrpc4{a} libkadm5clnt-mit8{a} libkadm5srv-mit8{a} 
+  libkdb5-7{a} libldap2-dev{a} libltdl-dev{a} libltdl7{a} liblua5.1-0-dev 
+  libmysqlclient-dev{a} libmysqlclient18{a} libpcre3-dev{a} libpcrecpp0{a} 
+  libpq-dev{a} libpq5{a} libreadline-dev{a} libreadline6-dev{a} 
+  libsqlite3-dev{a} libssl-dev{a} libssl-doc{a} libtinfo-dev{a} libtool{a} 
+  mysql-common{a} pkg-config{a} shared-mime-info{a} uuid-dev{a} 
+  zlib1g-dev{a} 
+The following packages will be upgraded:
+  libcomerr2 libexpat1 libgcrypt11 libgssapi-krb5-2 libk5crypto3 libkrb5-3 
+  libkrb5support0 libldap-2.4-2 libncurses5 libncursesw5 libpcre3 
+  libsqlite3-0 libssl1.0.0 libtinfo5 libuuid1 zlib1g 
+The following packages are RECOMMENDED but will NOT be installed:
+  uuid-runtime 
+
+root@snowden:/usr/local/src/apache2-2.4.6# aptitude install debhelper \
+> libcap-dev libxml2-dev
+The following NEW packages will be installed:
+  autopoint{a} debhelper gettext{a} git{a} git-man{a} html2text{a} 
+  intltool-debian{a} libcap-dev libcroco3{a} libcurl3-gnutls{a} 
+  liberror-perl{a} libgettextpo0{a} libmail-sendmail-perl{a} librtmp0{a} 
+  libssh2-1{a} libsys-hostname-long-perl{a} libunistring0{a} libxml2-dev 
+  po-debconf{a} rsync{a}
+
+root@snowden:/usr/local/src# dpkg -i apache2_2.4.6-3_amd64.deb
+
+root@snowden:/usr/local/src# dpkg -i apache2-bin_2.4.6-3_amd64.deb
+
+root@snowden:/usr/local/src# dpkg -i apache2-data_2.4.6-3_all.deb
+
+root@snowden:~# a2enmod ssl
+Considering dependency setenvif for ssl:
+Module setenvif already enabled
+Considering dependency mime for ssl:
+Module mime already enabled
+Considering dependency socache_shmcb for ssl:
+Enabling module socache_shmcb.
+Enabling module ssl.
+
+root@snowden:~# a2enmod headers
+Enabling module headers.
+
+root@snowden:~# a2enconf etag.conf
+Enabling conf etag.
+
+root@snowden:~# a2enconf ssl-custom.conf
+Enabling conf ssl-custom.
+
+root@snowden:~# a2dissite 000-default
+Site 000-default disabled.
+
+root@snowden:~# a2ensite nulpunt.argure.nl
+Enabling site nulpunt.argure.nl.
+
+root@snowden:~# aptitude install zsh
+The following NEW packages will be installed:
+  zsh 
+
+root@snowden:~# chsh -s /bin/zsh
+
+snowden# export PS1="%n@%m:%~# " 
+
+2013-09-20 geertjohan
+---------------------
+
+root@edi:~# a2enmod proxy
+Enabling module proxy.
+
+root@edi:~# apt-get install jenkins
+The following NEW packages will be installed:
+  daemon gcj-4.7-base gcj-4.7-jre-headless jenkins libasound2 libgcj-common libgcj13 libpcsclite1
+
+root@edi:/etc/apache2/sites-available# a2ensite jenkins.nulpunt.nu
+
+root@edi:~# a2enmod proxy_ajp
+Enabling module proxy_ajp.
+
+2013-09-21 geertjohan
+---------------------
+
+root@edi:~# aptitude -t testing install openjdk-7-jre
+The following NEW packages will be installed:
+  acl{a} at-spi2-core{a} ca-certificates-java{a} colord{a} consolekit{a} dbus{a} dbus-x11{a} 
+  dconf-gsettings-backend{a} dconf-service{a} desktop-file-utils{a} dosfstools{a} fontconfig{a} 
+  fontconfig-config{a} fonts-dejavu-core{a} fonts-dejavu-extra{a} fuse{a} gconf-service{a} gconf2 
+  gconf2-common{a} gnome-mime-data gvfs{a} gvfs-common{a} gvfs-daemons{a} gvfs-libs{a} 
+  hicolor-icon-theme{a} icedtea-7-jre-jamvm{a} init-system-helpers{a} java-common{a} libaacs0{a} 
+  libasyncns0{a} libatasmart4{a} libatk-bridge2.0-0{a} libatk-wrapper-java{a} 
+  libatk-wrapper-java-jni{a} libatk1.0-0{a} libatk1.0-data{a} libatspi2.0-0{a} libavahi-client3{a} 
+  libavahi-common-data{a} libavahi-common3{a} libavahi-glib1 libbluray1{a} libbonobo2-0{a} 
+  libbonobo2-common{a} libcairo-gobject2{a} libcairo2{a} libcanberra0{a} libck-connector0{a} 
+  libcolord1{a} libcolorhug1{a} libcups2{a} libdatrie1{a} libdbus-1-3{a} libdbus-glib-1-2{a} 
+  libdconf1{a} libdrm-intel1{a} libdrm-nouveau2{a} libdrm-radeon1{a} libdrm2{a} libexif12{a} 
+  libfam0 libfile-copy-recursive-perl{a} libflac8{a} libfontconfig1{a} libfontenc1{a} 
+  libgconf-2-4{a} libgconf2-4{a} libgd3{a} libgdk-pixbuf2.0-0{a} libgdk-pixbuf2.0-common{a} 
+  libgif4{a} libgl1-mesa-dri{a} libgl1-mesa-glx{a} libglapi-mesa{a} libgnome2-0{a} 
+  libgnome2-common{a} libgnomevfs2-0{a} libgnomevfs2-common libgnomevfs2-extra libgphoto2-2{a} 
+  libgphoto2-l10n{a} libgphoto2-port0{a} libgraphite2-3{a} libgtk-3-0{a} libgtk-3-bin{a} 
+  libgtk-3-common{a} libgtk2.0-0{a} libgtk2.0-bin{a} libgtk2.0-common{a} libgudev-1.0-0{a} 
+  libgusb2{a} libharfbuzz0a{a} libice6{a} libidl0{a} libieee1284-3{a} libjasper1{a} libjbig0 
+  libjpeg8{a} libjson-c2{a} liblcms2-2{a} libllvm3.2{a} libnspr4{a} libnss3{a} libogg0{a} 
+  liborbit2{a} libpam-ck-connector{a} libpango-1.0-0{a} libpango1.0-0{a} libpangocairo-1.0-0{a} 
+  libpangoft2-1.0-0{a} libpangox-1.0-0{a} libpangoxft-1.0-0{a} libpciaccess0{a} libpixman-1-0{a} 
+  libpng12-0{a} libpolkit-agent-1-0{a} libpolkit-backend-1-0{a} libpolkit-gobject-1-0{a} 
+  libpulse0{a} libsane{a} libsane-common{a} libsane-extras{a} libsane-extras-common{a} 
+  libsecret-1-0{a} libsecret-common{a} libsm6{a} libsmbclient libsndfile1{a} libsystemd-login0{a} 
+  libtalloc2{a} libtdb1{a} libtevent0{a} libthai-data{a} libthai0{a} libtiff4{a} 
+  libtxc-dxtn-s2tc0{a} libudisks2-0{a} libv4l-0{a} libv4lconvert0{a} libvorbis0a{a} 
+  libvorbisenc2{a} libvorbisfile3{a} libvpx1{a} libwbclient0{a} libx11-xcb1{a} libxaw7{a} 
+  libxcb-dri2-0{a} libxcb-glx0{a} libxcb-render0{a} libxcb-shape0{a} libxcb-shm0{a} 
+  libxcomposite1{a} libxcursor1{a} libxdamage1{a} libxfixes3{a} libxft2{a} libxi6{a} 
+  libxinerama1{a} libxmu6{a} libxpm4{a} libxrandr2{a} libxrender1{a} libxt6{a} libxtst6{a} 
+  libxv1{a} libxxf86dga1{a} libxxf86vm1{a} ntfs-3g{a} openjdk-7-jre openjdk-7-jre-headless{a} 
+  openjdk-7-jre-lib{a} policykit-1{a} policykit-1-gnome{a} sane-utils{a} ttf-dejavu-core{a} 
+  ttf-dejavu-extra{a} tzdata-java{a} udisks2{a} update-inetd{a} x11-common{a} x11-utils{a} 
+The following packages will be upgraded:
+  libacl1 libfuse2 libx11-6 
+
+root@edi:~# aptitude remove --purge openjdk-7-jre 
+The following packages will be REMOVED:
+  libatk-wrapper-java{a} libatk-wrapper-java-jni{a} openjdk-7-jre 
+
+root@edi:~# aptitude autoclean
+Del libitm1 4.8.1-2 [37.7 kB]
+Del gcc-4.8-base 4.8.1-2 [149 kB]
+Del libgomp1 4.8.1-2 [27.4 kB]
+Del libstdc++6 4.8.1-2 [336 kB]
+Del libquadmath0 4.8.1-2 [139 kB]
+Del libgcc1 1:4.8.1-2 [43.7 kB]
+
+root@edi:~# aptitude -t testing remove  acl at-spi2-core ca-certificates-java colord consolekit dbus dbus-x11  dconf-gsettings-backend dconf-service desktop-file-utils dosfstools fontconfig  fontconfig-config fonts-dejavu-core fonts-dejavu-extra fuse gconf-service gconf2  gconf2-common gnome-mime-data gvfs gvfs-common gvfs-daemons gvfs-libs  hicolor-icon-theme icedtea-7-jre-jamvm init-system-helpers java-common libaacs0  libasyncns0 libatasmart4 libatk-bridge2.0-0 libatk-wrapper-java  libatk-wrapper-java-jni libatk1.0-0 libatk1.0-data libatspi2.0-0 libavahi-client3  libavahi-common-data libavahi-common3 libavahi-glib1 libbluray1 libbonobo2-0  libbonobo2-common libcairo-gobject2 libcairo2 libcanberra0 libck-connector0  libcolord1 libcolorhug1 libcups2 libdatrie1 libdbus-1-3 libdbus-glib-1-2  libdconf1 libdrm-intel1 libdrm-nouveau2 libdrm-radeon1 libdrm2 libexif12  libfam0 libfile-copy-recursive-perl libflac8 libfontconfig1 libfontenc1  libgconf-2-4 libgconf2-4 libgd3 libgdk-pixbuf2.0-0 libgdk-pixbuf2.0-common  libgif4 libgl1-mesa-dri libgl1-mesa-glx libglapi-mesa libgnome2-0  libgnome2-common libgnomevfs2-0 libgnomevfs2-common libgnomevfs2-extra libgphoto2-2  libgphoto2-l10n libgphoto2-port0 libgraphite2-3 libgtk-3-0 libgtk-3-bin  libgtk-3-common libgtk2.0-0 libgtk2.0-bin libgtk2.0-common libgudev-1.0-0  libgusb2 libharfbuzz0a libice6 libidl0 libieee1284-3 libjasper1 libjbig0  libjpeg8 libjson-c2 liblcms2-2 libllvm3.2 libnspr4 libnss3 libogg0  liborbit2 libpam-ck-connector libpango-1.0-0 libpango1.0-0 libpangocairo-1.0-0  libpangoft2-1.0-0 libpangox-1.0-0 libpangoxft-1.0-0 libpciaccess0 libpixman-1-0  libpng12-0 libpolkit-agent-1-0 libpolkit-backend-1-0 libpolkit-gobject-1-0  libpulse0 libsane libsane-common libsane-extras libsane-extras-common  libsecret-1-0 libsecret-common libsm6 libsmbclient libsndfile1 libsystemd-login0  libtalloc2 libtdb1 libtevent0 libthai-data libthai0 libtiff4  libtxc-dxtn-s2tc0 libudisks2-0 libv4l-0 libv4lconvert0 libvorbis0a  libvorbisenc2 libvorbisfile3 libvpx1 libwbclient0 libx11-xcb1 libxaw7  libxcb-dri2-0 libxcb-glx0 libxcb-render0 libxcb-shape0 libxcb-shm0  libxcomposite1 libxcursor1 libxdamage1 libxfixes3 libxft2 libxi6  libxinerama1 libxmu6 libxpm4 libxrandr2 libxrender1 libxt6 libxtst6  libxv1 libxxf86dga1 libxxf86vm1 ntfs-3g openjdk-7-jre openjdk-7-jre-headless  openjdk-7-jre-lib policykit-1 policykit-1-gnome sane-utils ttf-dejavu-core  ttf-dejavu-extra tzdata-java udisks2 update-inetd x11-common x11-utils 
+The following packages will be REMOVED:  
+  acl at-spi2-core ca-certificates-java colord consolekit dbus dbus-x11 dconf-gsettings-backend 
+  dconf-service desktop-file-utils dosfstools fontconfig fontconfig-config fonts-dejavu-core 
+  fonts-dejavu-extra fuse gconf-service gconf2 gconf2-common gnome-mime-data gvfs gvfs-common 
+  gvfs-daemons gvfs-libs hicolor-icon-theme icedtea-7-jre-jamvm init-system-helpers java-common 
+  libaacs0 libasyncns0 libatasmart4 libatk-bridge2.0-0 libatk1.0-0 libatk1.0-data libatspi2.0-0 
+  libavahi-client3 libavahi-common-data libavahi-common3 libavahi-glib1 libbluray1 libbonobo2-0 
+  libbonobo2-common libcairo-gobject2 libcairo2 libcanberra0 libck-connector0 libcolord1 
+  libcolorhug1 libcups2 libdatrie1 libdbus-1-3 libdbus-glib-1-2 libdconf1 libdrm-intel1 
+  libdrm-nouveau2 libdrm-radeon1 libdrm2 libexif12 libfam0 libfile-copy-recursive-perl libflac8 
+  libfontconfig1 libfontenc1 libgconf-2-4 libgconf2-4 libgd3 libgdk-pixbuf2.0-0 
+  libgdk-pixbuf2.0-common libgif4 libgl1-mesa-dri libgl1-mesa-glx libglapi-mesa libgnome2-0 
+  libgnome2-common libgnomevfs2-0 libgnomevfs2-common libgnomevfs2-extra libgphoto2-2 
+  libgphoto2-l10n libgphoto2-port0 libgraphite2-3 libgtk-3-0 libgtk-3-bin libgtk-3-common 
+  libgtk2.0-0 libgtk2.0-bin libgtk2.0-common libgudev-1.0-0 libgusb2 libharfbuzz0a libice6 libidl0 
+  libieee1284-3 libjasper1 libjbig0 libjpeg8 libjson-c2 liblcms2-2 libllvm3.2 libnspr4 libnss3 
+  libogg0 liborbit2 libpam-ck-connector libpango-1.0-0 libpango1.0-0 libpangocairo-1.0-0 
+  libpangoft2-1.0-0 libpangox-1.0-0 libpangoxft-1.0-0 libpciaccess0 libpixman-1-0 libpng12-0 
+  libpolkit-agent-1-0 libpolkit-backend-1-0 libpolkit-gobject-1-0 libpulse0 libsane libsane-common 
+  libsane-extras libsane-extras-common libsecret-1-0 libsecret-common libsm6 libsmbclient 
+  libsndfile1 libsystemd-login0 libtalloc2 libtdb1 libtevent0 libthai-data libthai0 libtiff4 
+  libtxc-dxtn-s2tc0 libudisks2-0 libv4l-0 libv4lconvert0 libvorbis0a libvorbisenc2 libvorbisfile3 
+  libvpx1 libwbclient0 libx11-xcb1 libxaw7 libxcb-dri2-0 libxcb-glx0 libxcb-render0 libxcb-shape0 
+  libxcb-shm0 libxcomposite1 libxcursor1 libxdamage1 libxfixes3 libxft2 libxi6 libxinerama1 libxmu6 
+  libxpm4 libxrandr2 libxrender1 libxt6 libxtst6 libxv1 libxxf86dga1 libxxf86vm1 ntfs-3g 
+  openjdk-7-jre-headless openjdk-7-jre-lib policykit-1 policykit-1-gnome sane-utils ttf-dejavu-core 
+  ttf-dejavu-extra tzdata-java udisks2 update-inetd x11-common x11-utils 
+
+root@edi:~# aptitude -t testing install openjdk-7-jre-headless
+The following NEW packages will be installed:
+  ca-certificates-java{a} dbus{a} fontconfig-config{a} fonts-dejavu-core{a} icedtea-7-jre-jamvm{a} 
+  java-common{a} libavahi-client3{a} libavahi-common-data{a} libavahi-common3{a} libcups2{a} 
+  libdbus-1-3{a} libfontconfig1{a} libjpeg8{a} liblcms2-2{a} libnspr4{a} libnss3{a} 
+  libsystemd-login0{a} openjdk-7-jre-headless openjdk-7-jre-lib{a} ttf-dejavu-core{a} 
+  tzdata-java{a} 
+
+root@edi:~# apt-get remove --purge openjdk-7-jre-headless
+The following packages will be REMOVED:
+  ca-certificates-java* icedtea-7-jre-jamvm* openjdk-7-jre-headless* openjdk-7-jre-lib*
+
+root@edi:~# apt-get autoremove
+The following packages will be REMOVED:
+  dbus fontconfig-config fonts-dejavu-core java-common libavahi-client3 libavahi-common-data libavahi-common3 libcups2 libdbus-1-3 libfontconfig1 libjpeg8 liblcms2-2 libnspr4 libnss3 libsystemd-login0
+  ttf-dejavu-core tzdata-java
+
+root@edi:~# aptitude install openjdk-7-jre-headless
+The following packages will be DOWNGRADED:
+  tzdata 
+The following NEW packages will be installed:
+  ca-certificates-java{a} dbus{a} fontconfig-config{a} icedtea-7-jre-jamvm{a} java-common{a} libavahi-client3{a} libavahi-common-data{a} libavahi-common3{a} libcups2{a} libdbus-1-3{a} libfontconfig1{a} 
+  libjpeg8{a} liblcms2-2{a} libnspr4{a} libnss3{a} libsystemd-login0{a} openjdk-7-jre-headless openjdk-7-jre-lib{a} ttf-dejavu-core{a} tzdata-java{a} 
+
+2013-09-26 argure
+-----------------
+
+root@edi:~# aptitude install exim4-daemon-heavy
+The following NEW packages will be installed:
+  exim4-daemon-heavy libperl5.14{a} 
+The following packages will be REMOVED:
+  exim4-daemon-light{a} 
+
+root@edi:~# dpkg-reconfigure exim4-config
+General type of mail configuration: internet site; mail is sent and received \
+	directly using SMTP.
+System mail name: edi.nulpunt.nu
+IP-addresses to listen on for incoming SMTP connections:
+Other destinations for which mail is accepted: nulpunt.nu
+Domains to relay mail for:
+Machines to relay mail for:
+Keep number of DNS-queries minimal?: No
+Delivery method for local mail: Maildir format in home directory
+Split configuration into small files?: No
+Root and postmaster recipient: argure
+
+root@edi:~# aptitude install spamassassin clamav
+The following NEW packages will be installed:
+  clamav clamav-base{a} clamav-freshclam{a} libclamav6{a} 
+  libdigest-hmac-perl{a} libencode-locale-perl{a} 
+  libfile-listing-perl{a} libfont-afm-perl{a} 
+  libhtml-form-perl{a} libhtml-format-perl{a} 
+  libhtml-parser-perl{a} libhtml-tagset-perl{a} 
+  libhtml-tree-perl{a} libhttp-cookies-perl{a} 
+  libhttp-daemon-perl{a} libhttp-date-perl{a} 
+  libhttp-message-perl{a} libhttp-negotiate-perl{a} 
+  libio-socket-inet6-perl{a} libio-socket-ip-perl{a} 
+  libio-socket-ssl-perl{a} liblwp-mediatypes-perl{a} 
+  liblwp-protocol-https-perl{a} libmail-spf-perl{a} 
+  libmailtools-perl{a} libnet-dns-perl{a} libnet-http-perl{a} 
+  libnet-ip-perl{a} libnet-ssleay-perl{a} libnetaddr-ip-perl{a} 
+  libsocket-perl{a} libsocket6-perl{a} libtommath0{a} 
+  liburi-perl{a} libwww-perl{a} libwww-robotrules-perl{a} 
+  re2c{a} spamassassin spamc{a} 
+
+root@edi:/var/run/clamav# aptitude remove --purge clamav
+The following packages will be REMOVED:  
+  clamav clamav-base{pu} clamav-freshclam{pu} libclamav6{pu} 
+  libtommath0{pu} 
+
+root@edi:/var/run/clamav# aptitude install clamav-daemon clamav-freshclam      
+The following NEW packages will be installed:
+  clamav{a} clamav-base{a} clamav-daemon clamav-freshclam libclamav6{a} 
+  libtommath0{a} 
+
+root@edi:/var/lib/clamav# freshclam
+ClamAV update process started at Thu Sep 26 22:14:15 2013
+WARNING: Your ClamAV installation is OUTDATED!
+WARNING: Local version: 0.97.8 Recommended version: 0.98
+DON'T PANIC! Read http://www.clamav.net/support/faq
+Downloading main.cvd [100%]
+main.cvd updated (version: 55, sigs: 2424225, f-level: 60, builder: neo)
+Downloading daily.cvd [100%]
+daily.cvd updated (version: 17902, sigs: 379088, f-level: 63, builder: neo)
+Downloading bytecode.cvd [100%]
+bytecode.cvd updated (version: 226, sigs: 43, f-level: 63, builder: neo)
+Database updated (2803356 signatures) from db.local.clamav.net (IP: 62.201.161.84)
+
+root@edi:~# usermod -a -G Debian-exim clamav
+
+root@edi:/srv# a2dissite nulpunt.argure.nl 
+
+The following NEW packages will be installed:
+  golang golang-doc{a} golang-go{a} golang-go-linux-amd64{a} golang-src{a} 
+  javascript-common{a} libjs-jquery{a} 
+
+root@edi:~# aptitude install subversion darcs mercurial cvs bzr       
+The following NEW packages will be installed:
+  bzr cvs darcs libffi5{a} libneon27-gnutls{a} libsvn1{a} mercurial 
+  mercurial-common{a} python-bzrlib{a} python-configobj{a} python-crypto{a} 
+  python-gpgme{a} python-httplib2{a} python-keyring{a} 
+  python-launchpadlib{a} python-lazr.restfulclient{a} python-lazr.uri{a} 
+  python-oauth{a} python-paramiko{a} python-pkg-resources{a} 
+  python-simplejson{a} python-wadllib{a} python-zope.interface{a} 
+  subversion 
+
+root@edi:~# aptitude install dovecot-imapd       
+The following NEW packages will be installed:
+  dovecot-core{a} dovecot-imapd 
+
+2013-09-27 argure
+-----------------
+
+root@edi:/etc/exim4# aptitude install sasl2-bin
+The following NEW packages will be installed:
+  db-util{a} sasl2-bin 
+
+root@edi:/var/log/exim4# adduser Debian-exim sasl
+
+root@edi:~# aptitude install shorewall shorewall6
+The following NEW packages will be installed:
+  shorewall shorewall-core{a} shorewall6 
+
+root@edi:/etc/shorewall6# ln -s /etc/shorewall/policy policy
+
+root@edi:~# aptitude install fail2ban
+The following NEW packages will be installed:
+  fail2ban gamin{a} libgamin0{a} python-central{a} python-gamin{a} 
+
+2013-09-30 argure
+-----------------
+
+root@edi:~# aptitude install mysql-server
+The following NEW packages will be installed:
+  libaio1{a} libdbd-mysql-perl{a} libdbi-perl{a} libhtml-template-perl{a} 
+  libnet-daemon-perl{a} libplrpc-perl{a} mysql-client-5.5{a} mysql-server 
+  mysql-server-5.5{a} mysql-server-core-5.5{a} 
+
+root@edi:~# aptitude -t testing install libapache2-mod-fcgid
+The following NEW packages will be installed:
+  libapache2-mod-fcgid 
+
+root@edi:~# aptitude install php5 php5-fpm php5-mysql
+The following NEW packages will be installed:
+  libonig2{a} libqdbm14{a} php5 php5-common{a} php5-fpm php5-mysql 
+
+root@edi:~# a2ensite nulpunt.nu
+
+root@edi:~# a2enmod proxy_fcgi
+
+root@edi:~# aptitude install php-apc
+The following NEW packages will be installed:
+  php-apc 
+  
+  
+2013-09-30 08:57:40 geertjohan
+------------------------------
+
+root@edi:~# aptitude install mongodb
+The following NEW packages will be installed:
+  libboost-dev{a} libboost-filesystem1.49.0{a} libboost-program-options1.49.0{a} libboost-system1.49.0{a} 
+  libboost-thread1.49.0{a} libboost1.49-dev{a} libicu48{a} mongodb mongodb-clients{a} mongodb-dev{a} mongodb-server{a} 
+                                         
+root@edi:~# aptitude install -t testing mongodb
+The following NEW packages will be installed:
+  libgoogle-perftools4{a} libsnappy1{a} libtcmalloc-minimal4{a} libunwind7{a} 
+The following packages will be upgraded:
+  mongodb mongodb-server 
+
+2013-10-03 argure
+-----------------
+
+root@edi:~# aptitude full-upgrade
+The following packages will be upgraded: 
+  apache2 gcc-4.8-base jenkins libc-dev-bin libc6 libc6-dev libgcc1 
+  libgmp10 libgmpxx4ldbl libgomp1 libitm1 libmpfr4 libpq-dev libpq5 
+  libquadmath0 libstdc++6 linux-libc-dev locales 
+
+root@edi:/usr/local/src# dpkg -i apache2_2.4.6-3_amd64.deb
+
+root@edi:/usr/local/src# dpkg -i apache2-bin_2.4.6-3_amd64.deb
+
+root@edi:/usr/local/src# dpkg -i apache2-bin_2.4.6-3_amd64.deb
+
+root@edi:~# apt-mark hold apache2
+
+root@edi:~# apt-mark hold apache2-bin
+
+root@edi:~# apt-mark hold apache2-data
+
+
+2013-10-04 16:05:45 geertjohan
+------------------------------
+
+root@edi:~# mkdir /opt/nulpunt-http-files
+
+root@edi:~# chown jenkins:root /opt/nulpunt-http-files 
+
+
+2013-10-06 21:42:00 geertjohan
+------------------------------
+
+edi :: ~ » adduser --system nulpunt
+
+edi :: ~nulpunt » addgroup nulpunt 
+
+edi :: ~nulpunt » addgroup nulpunt nulpunt
+
+edi :: ~nulpunt » addgroup jenkins nulpunt
+
+edi :: ~nulpunt » chown nulpunt:nulpunt /home/nulpunt
+
+edi :: ~nulpunt » chwon nulpunt:nulpunt /home/nulpunt/http-files
+
+edi :: ~nulpunt » chmod g+w /home/nulpunt
+
+edi :: ~nulpunt » chmod g+w /home/nulpunt/http-files
+
+edi :: /usr/local/bin » touch nulpunt
+
+edi :: /usr/local/bin » chown jenkins:nulpunt nulpunt
+
+2013-10-06 argure
+-----------------
+
+root@edi:~# wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+
+2013-10-07 10:08:00 geertjohan
+------------------------------
+
+edi :: ~ » addgroup nulpunt
+Adding group `nulpunt' (GID 1000) ...
+Done.
+
+edi :: ~ » adduser --system --no-create-home --ingroup=nulpunt nulpunt
+Adding system user `nulpunt' (UID 114) ...
+Adding new user `nulpunt' (UID 114) with group `nulpunt' ...
+Not creating home directory `/home/nulpunt'.
+
+edi :: ~ » mkdir /srv/nightly.nulpunt.nu
+
+edi :: ~ » addgroup jenkins nulpunt
+
+edi :: ~ » chmod g+w /srv/nightly.nulpunt.nu
+
+edi :: ~ » cd /usr/local/bin
+edi :: /usr/local/bin » touch npserver
+edi :: /usr/local/bin » chown jenkins:nulpunt npserver
+edi :: /usr/local/bin » chmod u+s
+edi :: /usr/local/bin » chmod o-x
+
+2013-10-07 argure
+-----------------
+
+edi :: ~ » aptitude -t testing install libgmp-dev
+The following NEW packages will be installed:
+  libgmp-dev 
+
+edi :: ~ » aptitude install libghc6-parsec2-dev
+The following NEW packages will be installed:
+  ghc{a} libbsd-dev{a} libffi-dev{a} libghc-parsec2-dev{a} 
+  libghc6-parsec2-dev 
+
+edi :: local/src/compleat ‹master› » ./Setup.lhs install
+Installing executable(s) in /usr/local/bin
+
+edi :: local/src/git-extras ‹c45e2b8› » make install
+
+edi :: local/src/gitflow ‹8bb7890› » ./install.sh
+Installing hubflow to /usr/local/bin
+
+2013-10-07 13:10:00 geertjohan
+------------------------------
+
+edi :: ~prefix/bin » nano npserver-daemon
+edi :: ~prefix/bin » chown root:nulpunt npserver-daemon 
+edi :: ~prefix/bin » chmod ug+x npserver-daemon
+edi :: ~prefix/bin » chmod u+s npserver-daemon 
+edi :: ~prefix/bin » ls -al npserver*
+-rwxrwxr-- 1 root nulpunt 6677952 Oct  7 13:05 npserver
+-rwsr-xr-- 1 root nulpunt     232 Oct  7 13:10 npserver-daemon
+
+edi :: ~prefix/bin » mv npserver-daemon npserver-daemon-start
+
+# created binary with go, see repo nulpunt/npserver-daemon
+
+2013-10-07 14:33:00 geertjohan
+------------------------------
+
+edi :: /etc/apache2/sites-available » nano nightly.nulpunt.nu.conf      
+edi :: /etc/apache2/sites-available » a2enmod proxy_http                                                                        130 µ
+edi :: /etc/apache2/sites-available » service apache2 restart
+
+2013-10-11 argure
+-----------------
+
+edi :: ~ » aptitude full-upgrade
+The following packages will be upgraded: 
+  gnupg gpgv jenkins libmysqlclient-dev libmysqlclient18 manpages-dev 
+  mysql-common 
+
+edi :: ~ » aptitude full-upgrade
+The following packages will be upgraded: 
+  libsystemd-login0 
+
+2013-10-13 argure
+-----------------
+
+edi :: ~ » aptitude full-upgrade
+The following packages will be upgraded: 
+  base-files dmsetup dpkg dpkg-dev grub-common initscripts 
+  libapache2-mod-fcgid libcups2 libcurl3-gnutls libdevmapper1.02.1 
+  libdpkg-perl libperl5.14 libsvn1 linux-image-3.2.0-4-amd64 mutt perl 
+  perl-base perl-modules php5 php5-common php5-fpm php5-mysql python 
+  python-httplib2 python-minimal subversion sysv-rc sysvinit sysvinit-utils 
+  tzdata tzdata-java 
+
+edi :: ~ » aptitude install kbd
+The following NEW packages will be installed:
+  console-setup{a} console-setup-linux{a} kbd keyboard-configuration{a} 
+  xkb-data{a} 
+
+2013-10-20 argure
+-----------------
+
+edi :: ~ » aptitude full-upgrade
+The following packages will be upgraded: 
+  jenkins libx11-6 libxml2 libxml2-dev python-crypto 
+
+2013-10-21 argure
+-----------------
+
+edi :: ~ » aptitude full-upgrade
+The following packages will be upgraded: 
+  libpq-dev libpq5
+
+2013-10-28 argure
+-----------------
+
+edi :: ~ » aptitude full-upgrade
+The following packages will be upgraded: 
+  jenkins libicu48 
+
+2013-10-30 argure
+-----------------
+
+edi :: ~prefix/src/node-v0.10.21 » aptitude install checkinstall
+The following NEW packages will be installed:
+  checkinstall 
+
+edi :: ~prefix/src/node-v0.10.21 » dpkg -i node_0.10.21-1_amd64.deb
+
+edi :: /opt/etherpad-lite ‹8fffe47*› » npm install sqlite3
+
+2013-11-01 argure
+-----------------
+
+edi :: ~ » aptitude -t testing install binutils
+The following packages will be upgraded: 
+  binutils 
+
+edi :: ~ » aptitude -t wheezy-backports full-upgrade
+The following NEW packages will be installed:
+  firmware-linux-free{a} fontconfig{a} gnupg-agent{a} gnupg2{a} 
+  hicolor-icon-theme{a} init-system-helpers{a} libasprintf-dev{a} 
+  libassuan0{a} libatk1.0-0{a} libatk1.0-data{a} libcairo2{a} libdatrie1{a} 
+  libee0{a} libestr0{a} libgdk-pixbuf2.0-0{a} libgdk-pixbuf2.0-common{a} 
+  libgettextpo-dev{a} libgtk2.0-0{a} libgtk2.0-bin{a} libgtk2.0-common{a} 
+  libjasper1{a} libjbig0 libjson0{a} libksba8{a} liblognorm0{a} 
+  libpango1.0-0{a} libpixman-1-0{a} libpng12-0{a} libthai-data{a} 
+  libthai0{a} libtiff4{a} libxcb-render0{a} libxcb-shm0{a} 
+  libxcomposite1{a} libxcursor1{a} libxdamage1{a} libxfixes3{a} libxft2{a} 
+  libxi6{a} libxinerama1{a} libxrandr2{a} libxrender1{a} 
+  linux-image-3.10-0.bpo.3-amd64{a} pinentry-gtk2{a} python-six{a} 
+The following packages will be upgraded:
+  autopoint file geoip-database gettext gettext-base git git-core git-man 
+  initramfs-tools libasprintf0c2 libgeoip1 libgettextpo0 libgpgme11 
+  libmagic1 libxapian22 linux-image-amd64 mercurial mercurial-common 
+  openssh-client openssh-server python-debian rsyslog 
+
+edi :: ~prefix/src » dpkg -i apache2_2.4.6-3_amd64.deb 
+
+edi :: ~prefix/src » dpkg -i apache2.2-bin_2.4.6-3_amd64.deb 
+
+edi :: ~prefix/src » dpkg -i apache2-data_2.4.6-3_all.deb
+
+edi :: ~ » aptitude install tcpdump                                                                                                   127 ↵
+The following NEW packages will be installed:
+  libpcap0.8{a} tcpdump
+
+2013-11-02 argure
+-----------------
+
+edi :: ~ » aptitude full-upgrade
+The following packages will be upgraded: 
+  libnss3 
+
+edi :: /etc/init.d » aptitude install nagios-nrpe-server                                                                                1 ↵
+The following NEW packages will be installed:
+  fping{a} freeipmi-common{a} freeipmi-tools{a} libclass-accessor-perl{a} libconfig-tiny-perl{a} libdate-manip-perl{a} libfreeipmi12{a} 
+  libio-pty-perl{a} libipc-run-perl{a} libipmiconsole2{a} libipmidetect0{a} liblwp-useragent-determined-perl{a} 
+  libmail-imapclient-perl{a} libmath-calc-units-perl{a} libmemcached10{a} libmodule-implementation-perl{a} libmodule-runtime-perl{a} 
+  libnagios-plugin-perl{a} libnet-smtp-tls-perl{a} libnet-snmp-perl{a} libparams-classify-perl{a} libparams-validate-perl{a} 
+  libparse-recdescent-perl{a} libradiusclient-ng2{a} libreadonly-perl{a} libreadonly-xs-perl{a} libruby1.9.1{a} libsensors4{a} 
+  libsnmp-base{a} libsnmp15{a} libsub-name-perl{a} libtalloc2{a} libtdb1{a} libtry-tiny-perl{a} libwbclient0{a} libyaml-0-2{a} 
+  libyaml-syck-perl{a} nagios-nrpe-server nagios-plugins{a} nagios-plugins-basic{a} nagios-plugins-common{a} nagios-plugins-contrib{a} 
+  nagios-plugins-standard{a} qstat{a} ruby{a} ruby1.9.1{a} samba-common{a} samba-common-bin{a} smbclient{a} snmp{a}
+
+2013-11-07 argure
+-----------------
+
+edi :: ~ » aptitude full-upgrade
+The following packages will be upgraded: 
+  init-system-helpers jenkins
+
+2013-11-08 argure
+-----------------
+
+edi :: /var/run » aptitude full-upgrade
+The following partially installed packages will be configured:
+  jenkins 
+
+edi :: /var/run » aptitude -t wheezy-backports full-upgrade                 1 ↵
+The following NEW packages will be installed:
+  libcrypt-openssl-bignum-perl{a} libcrypt-openssl-dsa-perl{a} 
+  libcrypt-openssl-rsa-perl{a} libcrypt-ssleay-perl{a} libdbi1{a} 
+  libdigest-bubblebabble-perl{a} libjson-c2{a} libmime-base32-perl{a} 
+  libnet-dns-sec-perl{a} libtevent0{a} libvarnishapi1{a} 
+  libwebinject-perl{a} libxml-namespacesupport-perl{a} 
+  libxml-parser-perl{a} libxml-sax-base-perl{a} libxml-sax-expat-perl{a} 
+  libxml-sax-perl{a} libxml-simple-perl{a} 
+The following packages will be upgraded:
+  libjson0 libwbclient0 nagios-plugins nagios-plugins-basic 
+  nagios-plugins-common nagios-plugins-contrib nagios-plugins-standard 
+  samba-common samba-common-bin smbclient 
+
+2013-11-18 argure
+-----------------
+
+edi :: ~ » aptitude full-upgrade
+The following packages will be upgraded: 
+  curl jenkins libcurl3 libcurl3-gnutls openssh-client openssh-server 
+
+2013-11-24 argure
+-----------------
+
+edi :: ~ » aptitude update && aptitude full-upgrade -y
+The following packages will be upgraded: 
+  curl libcurl3 libcurl3-gnutls
+
+2013-12-04 argure
+-----------------
+edi :: ~ » aptitude full-upgrade
+The following packages will be upgraded: 
+  jenkins libnss3 linux-libc-dev 
+
+2013-12-17 geertjohan
+---------------------
+edi :: ~ » apt-get install libleptonica-dev
+The following extra packages will be installed:
+  libgif4 liblept3 libwebp2
+The following NEW packages will be installed:
+  libgif4 liblept3 libleptonica-dev libwebp2
+
+2013-12-17 argure
+-----------------
+
+edi :: ~ » aptitude -t stable full-upgrade
+The following NEW packages will be installed:
+  linux-image-3.11-0.bpo.2-amd64{a} 
+The following packages will be upgraded:
+  apt apt-utils base-files git git-core git-man jenkins libapt-inst1.5 
+  libapt-pkg4.12 libnspr4 libruby1.9.1 libvarnishapi1 linux-image-amd64 
+  mysql-client-5.5 mysql-server mysql-server-5.5 mysql-server-core-5.5 php5 
+  php5-common php5-fpm php5-mysql ruby1.9.1 tzdata tzdata-java
+
+Configuration file `/etc/php5/fpm/pool.d/www.conf'
+*** www.conf (Y/I/N/O/D/Z) [default=N] ? n
+
+edi :: ~ » aptitude -t wheezy-backports full-upgrade
+The following packages will be upgraded: 
+  libusb-1.0-0 
+
+root@edi:/usr/local/src# dpkg -i apache2_2.4.6-3_amd64.deb
+
+root@edi:/usr/local/src# dpkg -i apache2-bin_2.4.6-3_amd64.deb
+
+root@edi:/usr/local/src# dpkg -i apache2-bin_2.4.6-3_amd64.deb
+
+/* 
+ * START BIOS CHANGE
+ * Advanced {
+ * 	IPMI {
+ * 		Clear System Event Log {
+ * 			// Set from 0 to 1
+ * 		};
+ * 	};
+ * };
+ * END BIOS CHANGE
+ */
+
+2013-12-18 geertjohan
+-----------------
+edi :: ~ » aptitude install libtesseract3 libtesseract-dev tesseract-ocr-nld                                                    127 ↵
+The following NEW packages will be installed:
+  libtesseract-dev libtesseract3 tesseract-ocr-nld
+
+/* derp, need package from testing */
+
+edi :: ~ » aptitude remove --purge libtesseract3 libtesseract-dev tesseract-ocr-nld
+The following packages will be REMOVED:  
+  libtesseract-dev libtesseract3 tesseract-ocr-nld 
+
+edi :: ~ » aptitude install -t testing libtesseract3 libtesseract-dev tesseract-ocr-nld
+The following NEW packages will be installed:
+  libtesseract-dev libtesseract3 tesseract-ocr-nld
+
+2013-12-18 argure
+-----------------
+
+root@edi:/usr/local/src# dpkg -i apache2_2.4.6-3_amd64.deb
+
+root@edi:/usr/local/src# dpkg -i apache2-bin_2.4.6-3_amd64.deb
+
+root@edi:/usr/local/src# dpkg -i apache2-bin_2.4.6-3_amd64.deb
+
+2013-12-19 argure
+-----------------
+
+edi :: ~ » aptitude full-upgrade
+The following packages will be upgraded: 
+  gnupg gpgv initramfs-tools libpixman-1-0 
+The following packages are RECOMMENDED but will NOT be installed:
+  gnupg-curl 
+
+
+2013-12-20 geertjohan
+-----------------
+
+edi :: ~ » aptitude remove golang
+The following packages will be REMOVED:  
+  golang golang-doc{u} golang-go{u} golang-go-linux-amd64{u} golang-src{u} 
+
+edi :: ~ » aptitude install -t testing golang
+The following NEW packages will be installed:
+  golang golang-doc{a} golang-go{a} golang-go-linux-amd64{a} golang-go.tools{a} golang-src{a} 
+
+edi :: ~ » aptitude install byobu
+The following NEW packages will be installed:
+  byobu python-newt{a} screen{a} tmux{a} 
+
+
+2013-12-21 geertjohan
+-----------------
+
+edi :: ~ » aptitude install poppler-utils 
+The following NEW packages will be installed:
+  fonts-droid{a} ghostscript{a} gsfonts{a} libcupsimage2{a} libgs9{a} libgs9-common{a} libijs-0.35{a} 
+  libjbig2dec0{a} liblcms1{a} libopenjpeg2{a} libpaper-utils{a} libpaper1{a} libpoppler19{a} poppler-data{a} 
+  poppler-utils
+
+edi :: ~ » mv /usr/local/bin/npserver-daemon /usr/local/bin/npdaemonize
+
+2013-12-30 argure
+-----------------
+
+edi :: ~ » aptitude full-upgrade
+The following packages will be upgraded: 
+  curl libcurl3 libcurl3-gnutls libestr0 libxapian22 
+  linux-image-3.11-0.bpo.2-amd64 linux-libc-dev 
+
+edi :: ~ » aptitude -t wheezy-backports full-upgrade
+The following packages will be upgraded: 
+  tmux 
