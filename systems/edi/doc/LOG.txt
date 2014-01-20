@@ -47,3 +47,11 @@ The following packages will be upgraded:
  * END BIOS CHANGE
  */
 
+2014-01-20 argure
+-----------------
+
+edi :: ~ » aptitude full-upgrade
+The following NEW packages will be installed:
+  linux-image-3.12-0.bpo.1-amd64{a} 
+The following packages will be upgraded:
+  linux-image-amd64 
