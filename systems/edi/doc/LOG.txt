@@ -55,3 +55,14 @@ The following NEW packages will be installed:
   linux-image-3.12-0.bpo.1-amd64{a} 
 The following packages will be upgraded:
   linux-image-amd64 
+
+2014-01-26 argure
+
+edi :: ~ » aptitude -t stable full-upgrade                                130 ↵
+The following NEW packages will be installed:
+  libnet-cups-perl{a} python-bson{a} python-bson-ext{a} python-gridfs{a} 
+  python-pymongo{a} python-pymongo-ext{a} 
+The following packages will be upgraded:
+  jenkins libmysqlclient-dev libmysqlclient18 mysql-client-5.5 mysql-common 
+  mysql-server mysql-server-5.5 mysql-server-core-5.5 
+  nagios-plugins-contrib 
