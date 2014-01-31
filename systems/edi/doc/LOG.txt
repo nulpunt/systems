@@ -66,3 +66,10 @@ The following packages will be upgraded:
   jenkins libmysqlclient-dev libmysqlclient18 mysql-client-5.5 mysql-common 
   mysql-server mysql-server-5.5 mysql-server-core-5.5 
   nagios-plugins-contrib 
+
+2014-01-31 argure
+-----------------
+
+edi :: ~ » aptitude -t stable full-upgrade                                                                                                                                                                   130 ↵
+The following packages will be upgraded: 
+  curl git git-core git-man libcurl3 libcurl3-gnutls 
