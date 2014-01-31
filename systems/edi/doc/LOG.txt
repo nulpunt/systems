@@ -70,6 +70,21 @@ The following packages will be upgraded:
 2014-01-31 argure
 -----------------
 
-edi :: ~ » aptitude -t stable full-upgrade                                                                                                                                                                   130 ↵
+edi :: ~ » aptitude -t stable full-upgrade
 The following packages will be upgraded: 
   curl git git-core git-man libcurl3 libcurl3-gnutls 
+
+edi :: ~ » aptitude remove --purge php5-fpm mysql-server mysql-client php-apc \
+> php5 php5-mysql
+The following packages will be REMOVED:  
+  libaio1{pu} libhtml-template-perl{pu} libonig2{pu} libqdbm14{pu} 
+  mysql-client-5.5{pu} mysql-server mysql-server-5.5{pu} 
+  mysql-server-core-5.5{pu} php-apc php5 php5-common{pu} php5-fpm 
+  php5-mysql
+
+edi :: ~ » aptitude remove --purge libapache2-mod-fcgid
+The following packages will be REMOVED:  
+  libapache2-mod-fcgid 
+
+edi :: ~ » a2dismod proxy_fcgi
+Module proxy_fcgi disabled.
