@@ -88,3 +88,18 @@ The following packages will be REMOVED:
 
 edi :: ~ » a2dismod proxy_fcgi
 Module proxy_fcgi disabled.
+
+2014-02-05 argure
+-----------------
+
+edi :: ~ » apt-mark unhold apache2
+edi :: ~ » apt-mark unhold apache2-data                                  130 ↵
+edi :: ~ » apt-mark unhold apache2-bin 
+
+edi :: ~ » aptitude -t testing install apache2 apache2-data apache2-bin \
+libapr1-dev libaprutil1-dev libaprutil1-ldap libaprutil1-dbd-sqlite3
+The following NEW packages will be installed:
+  libsctp-dev{a} libsctp1{a} lksctp-tools{a} 
+The following packages will be upgraded:
+  apache2 apache2-bin apache2-data libapr1 libapr1-dev libaprutil1 
+  libaprutil1-dbd-sqlite3 libaprutil1-dev libaprutil1-ldap 
