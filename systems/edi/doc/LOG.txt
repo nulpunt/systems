@@ -122,3 +122,8 @@ The following packages will be upgraded:
 edi :: /var/log/apache2 » aptitude -t testing install libssl-dev
 The following packages will be upgraded: 
   libssl-dev libssl1.0.0 
+
+edi :: ~ » aptitude full-upgrade
+The following packages will be upgraded: 
+  base-files libc-bin libyaml-0-2 linux-image-3.12-0.bpo.1-amd64 linux-image-3.2.0-4-amd64 
+  linux-libc-dev multiarch-support python-lazr.restfulclient tzdata tzdata-java wget whois 
