@@ -114,3 +114,7 @@ The following NEW packages will be installed:
 edi :: /etc/apache2/conf-available » a2disconf charset.conf
 
 edi :: /etc/apache2/conf-available » a2disconf other-vhosts-access-log.conf 
+
+edi :: /var/log/apache2 » aptitude -t testing install openssl                                                                                                                                                130 ↵
+The following packages will be upgraded: 
+  openssl 
