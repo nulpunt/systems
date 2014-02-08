@@ -15,7 +15,7 @@ ACCEPT		net		fw		icmp	8
 ACCEPT		fw		net		icmp
 
 # SSH
-ACCEPT		net		fw		tcp	22
+ACCEPT		$GUIDO		fw		tcp	22
 
 # SMTP
 ACCEPT		net		fw		tcp	25
