@@ -103,3 +103,14 @@ The following NEW packages will be installed:
 The following packages will be upgraded:
   apache2 apache2-bin apache2-data libapr1 libapr1-dev libaprutil1 
   libaprutil1-dbd-sqlite3 libaprutil1-dev libaprutil1-ldap 
+
+2014-02-08 argure
+-----------------
+
+edi :: /etc/apache2/conf-available » aptitude -t testing install apache2-doc
+The following NEW packages will be installed:
+  apache2-doc 
+
+edi :: /etc/apache2/conf-available » a2disconf charset.conf
+
+edi :: /etc/apache2/conf-available » a2disconf other-vhosts-access-log.conf 
