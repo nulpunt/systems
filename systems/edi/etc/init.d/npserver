@@ -25,21 +25,20 @@
 
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
-DAEMON=/usr/local/bin/npserver
-NAME=npserver
-DESC="Nulpunt server"
+DAEMON=/usr/local/bin/npserver-prod
+NAME=npserver-prod
+DESC="Nulpunt server production"
 
-PIDFILE=/var/run/nulpunt.pid 
+PIDFILE=/var/run/nulpunt-prod.pid 
 
 # Test if binary exisits
 test -x $DAEMON || exit 0
 
 DAEMON_OPTS="--verbose"
-DAEMONUSER=npserver
+DAEMONUSER=npserver-prod
 
 # defaulting HTTP-FILES, HTTP-PORT and ENVIRONMENT, just in case
 # /etc/default/$name gets deleted
-HTTP-FILES="/srv/nulpunt.nu"
 HTTP-PORT="8001"
 ENVIRONMENT="prod"
 
@@ -63,7 +62,7 @@ fi
 start() {
 	echo "Starting $NAME..."
 	start-stop-daemon --start --make-pidfile --pidfile /var/run/$NAME.pid \
-		--background --chuid $DAEMONUSER --http-files=$HTTP-FILES \
+		--background --chuid $DAEMONUSER \
 		--http-port=$HTTP-PORT 	--environment=$ENVIRONMENT $DAEMONOPTS
 	echo "done"
 }
