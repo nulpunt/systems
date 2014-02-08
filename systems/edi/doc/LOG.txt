@@ -127,3 +127,5 @@ edi :: ~ » aptitude full-upgrade
 The following packages will be upgraded: 
   base-files libc-bin libyaml-0-2 linux-image-3.12-0.bpo.1-amd64 linux-image-3.2.0-4-amd64 
   linux-libc-dev multiarch-support python-lazr.restfulclient tzdata tzdata-java wget whois 
+
+edi :: /etc/ssl/certs » a2dismod deflate
