@@ -136,3 +136,7 @@ edi :: /etc/ssl/certs » a2dismod deflate
 edi :: ~ » aptitude install zip
 The following NEW packages will be installed:
   unzip{a} zip 
+
+edi :: ~ » adduser npserver-prod
+
+edi :: ~ » chsh npserver-prod -s /bin/false
