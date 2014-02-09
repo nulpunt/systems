@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Copyright (C) 2014 Patrick Godschalk <argure@argure.nl>
+# Copyright (C) 2014 Patrick Godschalk <argure@argure.nl>, Geert-Johan Riemer <geertjohan@geertjohan.net>
 #
 # To the extent possible under law, the author has dedicated all copyright
 # and related and neighbouring rights to this software to the public domain
@@ -23,23 +23,24 @@
 #                    and amplify documents.
 ### END INIT INFO
 
+. /lib/lsb/init-functions
+
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 DAEMON=/usr/local/bin/npserver-prod
 NAME=npserver-prod
-DESC="Nulpunt server production"
+DESC="Nulpunt production server"
 
-PIDFILE=/var/run/nulpunt-prod.pid 
+PIDFILE=/var/run/$NAME.pid
 
 # Test if binary exisits
-test -x $DAEMON || exit 0
+test -x $DAEMON || exit 1
 
-DAEMON_OPTS="--verbose"
 DAEMONUSER=npserver-prod
 
 # defaulting HTTP-FILES, HTTP-PORT and ENVIRONMENT, just in case
 # /etc/default/$name gets deleted
-HTTP-PORT="8001"
+HTTP_PORT="8001"
 ENVIRONMENT="prod"
 
 set -e
@@ -61,26 +62,27 @@ fi
 
 start() {
 	echo "Starting $NAME..."
-	start-stop-daemon --start --make-pidfile --pidfile /var/run/$NAME.pid \
+	start-stop-daemon --start --make-pidfile --pidfile $PIDFILE \
 		--background --chuid $DAEMONUSER \
-		--http-port=$HTTP-PORT 	--environment=$ENVIRONMENT $DAEMONOPTS
+		--exec $DAEMON -- \
+			--http-port=$HTTP_PORT --environment=$ENVIRONMENT
 	echo "done"
 }
 
 stop() {
 	echo "Stopping $NAME..."
-	if test -f /var/run/$NAME.pid; then
-		while test -d /proc/$(cat /var/run/$NAME.pid); do
-			killtree($cat /var/run/$NAME.pid) 15
+	if test -f $PIDFILE; then
+		while test -d /proc/$(cat $PIDFILE); do
+			killtree $(cat $PIDFILE) 15
 			sleep 0.5
 		done
-		rm /var/run/$NAME.pid
+		rm $PIDFILE
 	fi
 	echo "done"
 }
 
 status() {
-	status_of_proc -p /var/run/$NAME.pid "" "npserver" && exit 0 || exit $?
+	status_of_proc -p $PIDFILE "" "npserver" && exit 0 || exit $?
 }
 
 case "$1" in
