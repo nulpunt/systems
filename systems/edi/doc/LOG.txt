@@ -130,9 +130,22 @@ The following packages will be upgraded:
 
 edi :: /etc/ssl/certs » a2dismod deflate
 
+<<<<<<< HEAD
 2014-02-11 argure
 -----------------
 
 edi :: ~ » aptitude full-upgrade
 The following packages will be upgraded: 
   jenkins 
+=======
+
+2014-02-09 geertjohan
+-----------------
+edi :: ~ » aptitude install zip
+The following NEW packages will be installed:
+  unzip{a} zip 
+
+edi :: ~ » adduser npserver-prod
+
+edi :: ~ » chsh npserver-prod -s /bin/false
+>>>>>>> 9b97d37a2d2baec22a1db54a918ed5905b70d148
