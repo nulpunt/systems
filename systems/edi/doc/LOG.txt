@@ -129,3 +129,10 @@ The following packages will be upgraded:
   linux-libc-dev multiarch-support python-lazr.restfulclient tzdata tzdata-java wget whois 
 
 edi :: /etc/ssl/certs » a2dismod deflate
+
+2014-02-11 argure
+-----------------
+
+edi :: ~ » aptitude full-upgrade
+The following packages will be upgraded: 
+  jenkins 
