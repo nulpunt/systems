@@ -146,3 +146,10 @@ edi :: ~ » chsh npserver-prod -s /bin/false
 edi :: ~ » aptitude full-upgrade
 The following packages will be upgraded:
   jenkins 
+
+2014-02-25 argure
+-----------------
+
+edi :: ~ » aptitude full-upgrade
+The following packages will be upgraded: 
+  jenkins libgnutls26 libyaml-0-2
