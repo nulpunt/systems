@@ -153,3 +153,12 @@ The following packages will be upgraded:
 edi :: ~ » aptitude full-upgrade
 The following packages will be upgraded: 
   jenkins libgnutls26 libyaml-0-2
+
+2014-03-10 argure
+-----------------
+
+edi :: ~ » aptitude full-upgrade
+The following packages will be REMOVED:
+  openssh-blacklist{u} openssh-blacklist-extra{u} 
+The following packages will be upgraded:
+  jenkins libgnutls26 libwbclient0 openssh-client openssh-server
