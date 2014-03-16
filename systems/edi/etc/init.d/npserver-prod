@@ -97,12 +97,12 @@ case "$1" in
   start|debug)
     check_homedir
     echo -n "Starting $DESC: "
-    #set +e
-    ## Check if MySQL is started and listening
-    #while ! netstat -tl | grep mysql > /dev/null 2>&1
-    #do
-    #sleep 1
-    #done
+    set +e
+    # Check if MongoDB is started and listening
+    while ! netstat -tl | grep "27017" > /dev/null 2>&1
+    do
+    sleep 1
+    done
     start_npserver_prod_daemon
     ;;
 
