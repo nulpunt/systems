@@ -1,0 +1,160 @@
+#! /bin/sh
+#
+### BEGIN INIT INFO
+# Provides:          npserver-prod
+# Required-Start:    $syslog $network $local_fs $remote_fs
+# Required-Stop:     $syslog $network $local_fs $remote_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start and stop the npserver-prod software
+# Description:       Start and stop the npserver-prod software
+### END INIT INFO
+
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+WORKDIR=/usr/local/bin
+DAEMON=$WORKDIR/npserver-prod
+NAME=npserver-prod
+DESC=npserver-prod
+HOMEDIR=/var/run/npserver-prod
+PIDFILE=$HOMEDIR/$NAME.pid
+DEFAULTS=/etc/default/npserver-prod
+
+
+check_homedir ()
+{
+  # Create HOMEDIR directory in case it doesn't exist.
+  # Useful in Ubuntu as /var/run/ content is deleted in shutdown.
+  if [ ! -d $HOMEDIR ]; then
+    mkdir $HOMEDIR
+  fi
+
+  # Set the appropiate owner and group
+  chown ${USER}:${GROUP} $HOMEDIR
+}
+
+
+# Check for npserver-prod
+if [ ! -f $DAEMON ]; then
+  echo "No $DESC daemon at $DAEMON."
+  case "$1" in
+  status)
+    # LSB - 4: program or service status is unknown.
+    exit 4
+    ;;
+  *)
+    # LSB - 5: program is not installed.
+    exit 5
+    ;;
+  esac
+fi
+
+
+# Load startup options if available.
+if [ -f $DEFAULTS ]; then
+  . $DEFAULTS || true
+fi
+
+
+set -e
+
+
+[ -z "$USER" ]  && USER=npserver-prod
+[ -z "$GROUP" ] && GROUP=npserver-prod
+
+
+start_npserver_prod_daemon ()
+{
+  start-stop-daemon --start --chdir $WORKDIR --chuid $USER:$GROUP \
+    --exec $DAEMON -- --environment=prod --verbose --http-port=8001 >> /var/log/npserver-prod.log 2>&1 &
+  res=$?
+
+  echo -n "$NAME "
+  if [ $res -eq 0 ] ; then
+    echo "started."
+    while ! pidof npserver-prod > /dev/null 2>&1
+    do
+    sleep 1
+    done
+    echo -n $(pidof npserver-prod) > $PIDFILE
+    exit 0
+  else
+    if [ ! -r "$PIDFILE" ]; then
+      echo "error, failed to start."
+      exit 1
+    elif read pid < "$PIDFILE" ; ps -p "$pid" > /dev/null 2>&1; then
+      echo "already running."
+      exit 0
+    else
+      echo "error, failed to start ($PIDFILE exists)."
+      exit 1
+    fi
+  fi
+}
+
+
+case "$1" in
+  start|debug)
+    check_homedir
+    echo -n "Starting $DESC: "
+    #set +e
+    ## Check if MySQL is started and listening
+    #while ! netstat -tl | grep mysql > /dev/null 2>&1
+    #do
+    #sleep 1
+    #done
+    start_npserver_prod_daemon
+    ;;
+
+  stop)
+    echo -n "Stopping $DESC: $NAME "
+    set +e
+    start-stop-daemon --oknodo --stop --quiet --chuid $USER:$GROUP \
+      --exec $DAEMON
+    if [ $? -eq 0 ] ; then
+      echo "stopped."
+      rm -f $PIDFILE
+      exit 0
+    else
+      echo "failed to stop."
+      exit 1
+    fi
+    ;;
+    
+  restart|force-reload)
+    check_homedir
+    echo -n "Restarting $DESC:"
+    set +e
+    start-stop-daemon --oknodo --stop --quiet --retry=5 \
+      --exec $DAEMON
+    if [ $? -ne 0 ] ; then
+      echo "$NAME failed to stop."
+      exit 1
+    fi
+    start_npserver_prod_daemon
+    ;;
+
+  status)
+    echo -n "Status of $DESC: $NAME "
+    if [ ! -r "$PIDFILE" ]; then
+      echo "is not running."
+      exit 3
+    fi
+    if read pid < "$PIDFILE" ; ps -p "$pid" > /dev/null 2>&1; then
+      echo "is running."
+      exit 0
+    else
+      echo "is not running but $PIDFILE exists."
+      exit 1
+    fi
+    ;;
+
+  *)
+    N=/etc/init.d/$NAME
+    echo "Usage: $N {start|stop|restart|force-reload|debug|status}" >&2
+    exit 1
+    ;;
+esac
+
+
+exit 0
