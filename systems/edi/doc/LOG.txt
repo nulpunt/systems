@@ -162,3 +162,21 @@ The following packages will be REMOVED:
   openssh-blacklist{u} openssh-blacklist-extra{u} 
 The following packages will be upgraded:
   jenkins libgnutls26 libwbclient0 openssh-client openssh-server
+
+2014-03-25 argure
+-----------------
+
+edi :: ~ » aptitude install libntdb1=1.0-2~bpo70+1
+The following packages will be DOWNGRADED:
+  libntdb1 
+
+edi :: ~ » aptitude full-upgrade
+The following NEW packages will be installed:
+  linux-image-3.13-0.bpo.1-amd64{a} openssh-sftp-server{a} python-ntdb{a} 
+The following packages will be REMOVED:
+  libjson0{u} 
+The following packages will be upgraded:
+  geoip-database init-system-helpers jenkins libsmbclient libwbclient0 
+  linux-image-amd64 linux-libc-dev mutt openssh-client openssh-server 
+  python-samba rsyslog samba-common samba-common-bin samba-libs smbclient 
+  tmux 
