@@ -180,3 +180,14 @@ The following packages will be upgraded:
   linux-image-amd64 linux-libc-dev mutt openssh-client openssh-server 
   python-samba rsyslog samba-common samba-common-bin samba-libs smbclient 
   tmux 
+
+2014-04-08 argure
+-----------------
+
+The following NEW packages will be installed:
+  linux-image-3.13-0.bpo.1-amd64{a} openssh-sftp-server{a} python-ntdb{a} 
+The following packages will be upgraded:
+  file geoip-database init-system-helpers jenkins libmagic1 libsmbclient 
+  libwbclient0 libyaml-0-2 linux-image-amd64 linux-libc-dev mutt 
+  openssh-client openssh-server python-samba rsyslog samba-common 
+  samba-common-bin samba-libs smbclient tmux 
