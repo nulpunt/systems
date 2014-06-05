@@ -191,3 +191,25 @@ The following packages will be upgraded:
   libwbclient0 libyaml-0-2 linux-image-amd64 linux-libc-dev mutt 
   openssh-client openssh-server python-samba rsyslog samba-common 
   samba-common-bin samba-libs smbclient tmux 
+
+2014-06-05 argure
+-----------------
+
+edi :: ~ » aptitude full-upgrade
+The following NEW packages will be installed:
+  liblogging-stdlog0{a} linux-image-3.14-0.bpo.1-amd64{a} 
+The following packages will be REMOVED:
+  libtommath0{u} openjdk-7-jre-lib{u} 
+The following packages will be upgraded:
+  base-files clamav clamav-base clamav-daemon clamav-freshclam curl dpkg 
+  dpkg-dev geoip-database git git-core git-man icedtea-7-jre-jamvm jenkins 
+  libclamav6 libcurl3 libcurl3-gnutls libdpkg-perl libgnutls26 libjbig0 
+  liblcms2-2 libmysqlclient-dev libmysqlclient18 libopenjpeg2 libsmbclient 
+  libsnmp-base libsnmp15 libsvn1 libusb-1.0-0 libv8-3.14.5 libwbclient0 
+  libxml2 libxml2-dev linux-image-3.13-0.bpo.1-amd64 
+  linux-image-3.2.0-4-amd64 linux-image-amd64 linux-libc-dev mysql-common 
+  nagios-plugins nagios-plugins-basic nagios-plugins-common 
+  nagios-plugins-contrib nagios-plugins-standard openjdk-7-jre-headless 
+  openssh-client openssh-server openssh-sftp-server python-samba rsyslog 
+  samba-common samba-common-bin samba-libs smbclient snmp spamassassin 
+  spamc subversion tmux tzdata tzdata-java 
